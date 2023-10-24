@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,4 +11,14 @@ export class SidebarComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  isUserCreateVisible: boolean = false;
+
+  toggleUserCreate() {
+    this.isUserCreateVisible = !this.isUserCreateVisible;
+  }
+  ngOnInit() {
+    this.toggleUserCreate();
+  }
+  
 }

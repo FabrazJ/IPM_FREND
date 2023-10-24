@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
-import { RecoveryComponent } from './recovery/recovery.component';
+import { RecoveryComponent } from './login/recovery/recovery.component';
 import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
 
 @NgModule({

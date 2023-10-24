@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
-import { RecoveryComponent } from './recovery/recovery.component';
+import { RecoveryComponent } from './login/recovery/recovery.component';
 import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'sidebar', component: SidebarComponent },
   { path: 'usercreate', component: UsercreateComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Ruta predeterminada
-  { path: '**', redirectTo: '/usercreate' }, // Ruta para manejar rutas no encontradas
+  { path: '**', redirectTo: '/recovery' }, // Ruta para manejar rutas no encontradas
  // { path: '**', redirectTo: '/recovery' }, // Ruta para manejar rutas no encontradas
 ];
 

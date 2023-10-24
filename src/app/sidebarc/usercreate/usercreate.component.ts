@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./usercreate.component.css']
 })
 export class UsercreateComponent {
-  constructor(private router: Router) {}
-  goBackToLogin1() {
+   constructor(private router: Router) {}
+  goBackToLogin() {
     this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
   }
 }
