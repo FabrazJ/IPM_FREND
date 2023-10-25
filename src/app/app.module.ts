@@ -7,6 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 import { RecoveryComponent } from './login/recovery/recovery.component';
 import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
+import { DashboardComponent } from './sidebarc/dashboard/dashboard.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,13 @@ import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component'
     LoginComponent,
     SidebarComponent,
     RecoveryComponent,
-    UsercreateComponent
+    UsercreateComponent,
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
