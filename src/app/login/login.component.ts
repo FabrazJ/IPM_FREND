@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit{
     this.auth.login(this.loginForm.value)
     .subscribe
     ({
-      next: (res: HttpResponse<string>) => {
-        alert(res);
+      next: (res) => {
+        alert('Login successful');
         this.loginForm.reset();
         this.router.navigate(['./sidebar'])
       },
