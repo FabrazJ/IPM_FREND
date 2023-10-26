@@ -3,21 +3,18 @@
     <img class="mx-auto h-16 w-auto" src="../../assets/img/logo/INTEGRITY SOLUTIONS HORIZONTAL NEGATIVO SIN FONDO.png" alt="ISC">
     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900" style="color: white;">Sign in to your account</h2>
 
-    <form  class="mt-8 space-y-6" action="#" method="POST">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()"  class="mt-8 space-y-6" action="#" method="POST">
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700" style="color: aliceblue;">Email address</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex: m.vargas.or10@gmail.com" 
+        <input formControlName="email" name="email" type="email" autocomplete="email" placeholder="Ex: m.vargas.or10@gmail.com" 
           class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm
           placeholder-gray-400 focus:ring focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
           
-        <div class="alert alert-danger" style="color: red;">
-          Por favor, ingrese una dirección de correo electrónico válida.
-        </div>
-      </div>
+         </div>
       
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700" style="color: aliceblue;">Password</label>
-        <input  id="password" name="password" type="password" placeholder="****" autocomplete="current-password" 
+        <input formControlName="password" id="password" name="password" type="password" placeholder="****" autocomplete="current-password" 
           required 
           class="mt-1 block w-full py-2 px-3 
           border border-gray-300 rounded-md 
