@@ -12,7 +12,7 @@ import { DashboardComponent } from './sidebarc/dashboard/dashboard.component';
 //Http modules
 import { HttpClientModule } from '@angular/common/http';
 
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -30,7 +30,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,ReactiveFormsModule,
     //Http
      HttpClientModule,
-    // FormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
