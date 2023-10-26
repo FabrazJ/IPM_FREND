@@ -9,8 +9,11 @@ import { RecoveryComponent } from './login/recovery/recovery.component';
 import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
 import { DashboardComponent } from './sidebarc/dashboard/dashboard.component';
 
+//Http modules
 import { HttpClientModule } from '@angular/common/http';
 
+// import { FormsModule } from '@angular/forms';
+import{ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,
+    AppRoutingModule,ReactiveFormsModule,
+    //Http
+     HttpClientModule,
+    // FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

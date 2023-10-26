@@ -1,52 +1,49 @@
-import { Component } from '@angular/core';
-import { UsuarioService } from './service/usuario.service';
+import { Component,OnInit } from '@angular/core';
+import{ FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-
-interface LoginResponse {
-  success: boolean;
-  message: string; // Otra propiedad según la respuesta real
-  // Otras propiedades según la respuesta real
-}
+import { UsuarioService } from './service/usuario.service';
+import { UsuarioRequest } from './service/usuarioRequest';
+// import { UsuarioService } from './service/usuario.service';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  isEmailValid = true; // Bandera para verificar la validez del correo electrónico
-  
-  validateEmail(event: any) {
-    const email = event.target.value;
-    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    this.isEmailValid = pattern.test(email);
-  }
-  // Backend
-  
-  user = {
-    username: 'michelle@example.com',
-    password: '123'
-  };
-  errorMessage: string = '';
+export class LoginComponent implements OnInit{
+  loginError:string="";
+   loginForm=this.formBuilder.group({
+    email:['michelle@example.com',[Validators.required,Validators.email]],
+    passwor:['',Validators.required],
+   })
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+   constructor(private formBuilder:FormBuilder, private router:Router, private UsuarioService:UsuarioService){   }
 
-  login() {
-    this.usuarioService.login(this.user).subscribe(
-      (response: LoginResponse) => {
-        // Verificar la respuesta del servidor
-        if (response && response.success) {
-          // Inicio de sesión exitoso, puedes redirigir a la página de inicio u otra página.
-          this.router.navigate(['/sidebar']);
-        } else {
-          // Inicio de sesión fallido, mostrar un mensaje de error al usuario.
-          this.errorMessage = 'Nombre de usuario o contraseña incorrectos.';
+   ngOnInit(): void { }
+
+   login(){
+    if(this.loginForm.valid){
+      this.UsuarioService.login(this.loginForm.value as UsuarioRequest).subscribe({
+        next:(userData)=>{
+          console.log(userData);
+        },
+        error:(errorData)=>{
+          console.error(errorData);
+          this.loginError=errorData;
+        },
+        complete:()=>{
+          console.info('login COmpleto');
+          this.router.navigateByUrl('/sidebar');  
+          this.loginForm.reset();
         }
-      },
-      (error) => {
-        // Manejar errores aquí si hay problemas con la solicitud HTTP.
-        console.error('Error en la solicitud de inicio de sesión:', error);
-      }
-    );
-  }
+
+      })
+    
+    }
+    else{
+      alert("Error al ingresar los datos");
+    }
+   }
+
 }
