@@ -1,9 +1,0 @@
-{"idUsuario":1,
-"nombre":"michelle",
-"email":"michelle@example.com",
-"contraseña":"123","confirmarClave":"123",
-"restablecer":true,
-"confirmado":true,
-"token":"1223      ",
-"IdPersona":24
-}
