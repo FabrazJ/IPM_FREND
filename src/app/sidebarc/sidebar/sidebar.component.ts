@@ -14,7 +14,10 @@ export class SidebarComponent {
 
   isMenuOpen = false;
   isUserCreateVisible: boolean = false;
-  
+
+  isDropdownOpen = false;
+  isDropdownOpen1 = false;
+
   ngOnInit() {
     this.toggleUserCreate();
   }
@@ -23,26 +26,13 @@ export class SidebarComponent {
     this.isUserCreateVisible = !this.isUserCreateVisible;
   }
   
-  isDropdownOpen = false;
-  
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
   
-  isMenuVisible:boolean= false;
-
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen; // Alterna el estado del menú
-    
-  const drawerNavigation = document.getElementById('drawer-navigation'); // O usa ElementRef
-  if (this.isMenuVisible) {
-    // Mostrar el menú
-    this.renderer.removeClass(drawerNavigation, '-translate-x-full');
-    this.renderer.addClass(drawerNavigation, 'translate-x-0');
-  } else {
-    // Ocultar el menú
-    this.renderer.removeClass(drawerNavigation, 'translate-x-0');
-    this.renderer.addClass(drawerNavigation, '-translate-x-full');
+   
+  toggleDropdown1() {
+    this.isDropdownOpen1 = !this.isDropdownOpen1;
   }
-  }
+  
 }
