@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+//Hacerlo desde 0
 }
 //implements OnInit {
 //   loginForm!: FormGroup;
