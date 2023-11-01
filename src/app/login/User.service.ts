@@ -5,12 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
+  
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
     const loginData = { email, password };
 
-    return this.http.post('http://192.168.100.28:5205/api/Usuario', loginData); 
+    return this.http.post('http://localhost:5205/api/Usuario', loginData); 
   }
  
 }
@@ -22,7 +23,7 @@ export class UserService {
   //   return this.http.post('/api/login', loginData); // Sustituye la URL con la de tu servicio C#
   // }
 
- // private apiBaseURL = 'http://192.168.100.28:5205'; // Ajusta la IP y el puerto
+ // private apiBaseURL = 'http://192.168.100.28:5205';   // Ajusta la IP y el puerto
 
   // constructor(private http: HttpClient) {}
 
