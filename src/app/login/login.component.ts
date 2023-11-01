@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component} from '@angular/core';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from './User.service';
 @Component({
@@ -7,46 +7,84 @@ import { UserService } from './User.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  export class LoginComponent {
 
-  constructor(private formBuilder: FormBuilder, private authService: UserService, private router: Router) {
-  }
+    email: string = 'michelle@example.com';
+    password: string = '123';
   
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: ['michelle@example.com', [Validators.required, Validators.email]],
-      password: ['123', Validators.required],
-    });
-  }
+    constructor(private userService: UserService, private router:Router) {}
   
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const email = this.loginForm.get('email')?.value;
-      const password = this.loginForm.get('password')?.value;
-      
-      this.authService.login(email, password).subscribe(
-        (res: any) => {
-          if (res.success) {
+    login() {
+      this.userService.login(this.email, this.password).subscribe(
+        (response: any) => {
+          if (response.success) {
             alert('Inicio de sesión exitoso');
-            this.loginForm.reset();
-            this.router.navigate(['/sidebar']); // Redirigir a una página después del inicio de sesión exitoso
+            this.router.navigate(['/sidebar']);
+            // Puedes redirigir a otra página después del inicio de sesión exitoso aquí
           } else {
-            alert('Inicio de sesión fallido. Credenciales no válidas.');
+            alert('Inicio de sesión fallido. Credenciales incorrectas.');
           }
         },
         (error) => {
           console.error(error);
-          alert('Inicio de sesión fallido. Se produjo un error.');
+          alert('Inicio de sesión fallido. Ocurrió un error en el servidor.');
         }
       );
-    } else {
-      alert('Por favor, complete todos los campos requeridos.');
     }
   }
+  
+  
+  
+  
+  
+  
+  
+  //implements OnInit {
+//   loginForm!: FormGroup;
 
+//   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+//   }
+  
+//   ngOnInit(): void {
+//     this.loginForm = this.formBuilder.group({
+//       email: ['', [Validators.required, Validators.email]],
+//       password: ['', Validators.required],
+//     });
+//   }
+//   onSubmit() {
+//     if (this.loginForm.valid) {
+//       const emailControl = this.loginForm.get('email');
+//       const passwordControl = this.loginForm.get('password');
+  
+//       if (emailControl && passwordControl) {
+//         const email = emailControl.value;
+//         const password = passwordControl.value;
+  
+//         this.userService.login(email, password).subscribe(
+//           (res: any) => {
+//             if (res.success) {
+//               alert('Inicio de sesión exitoso');
+//               this.loginForm.reset();
+//               this.router.navigate(['/sidebar']); // Redirigir a una página después del inicio de sesión exitoso
+//             } else {
+//               alert('Inicio de sesión fallido. Credenciales no válidas.');
+//             }
+//           },
+//           (error) => {
+//             console.error(error);
+//             alert('Inicio de sesión fallido. Se produjo un error.');
+//           }
+//         );
+//       } else {
+//         alert('Los campos de correo electrónico y contraseña son nulos.');
+//       }
+//     } else {
+//       alert('Por favor, complete todos los campos requeridos.');
+//     }
+//   }
+  
 
-}
+// }
 
 // conexion que si da 
 
