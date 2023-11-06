@@ -9,7 +9,7 @@ export class Body_navComponent implements OnInit {
   
   
   isUserCreateVisible: boolean = false;
-  isDashboardVisible: boolean = false;
+  isDashboardVisible: boolean = true;
 
 
   isDropdownOpen = false;

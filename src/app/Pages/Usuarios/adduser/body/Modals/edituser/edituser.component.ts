@@ -24,16 +24,17 @@ export class EdituserComponent  {
     closeModal() {
       this.isModalOpen = false;
     }
+
   //Visualizar contraseña 
   showPassword = false;
-  password = ''; // Aquí debes enlazar la propiedad con [(ngModel)] en el HTML
+  password = '';
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
 
   showPassword1 = false;
-  password1 = ''; // Aquí debes enlazar la propiedad con [(ngModel)] en el HTML
+  password1 = ''; 
 
   togglePasswordVisibility1() {
     this.showPassword1 = !this.showPassword;

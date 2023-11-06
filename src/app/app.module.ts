@@ -12,6 +12,10 @@ import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { Header_navComponent } from './SideNav/header_nav/header_nav.component';
 import { Body_navComponent } from './SideNav/body_nav/body_nav.component';
 
+//Dashboard
+import { GraphicsbarrasComponent } from './Pages/Dashboard/graphicsbarras/graphicsbarras.component';
+import { GraficoCircularComponent } from './Pages/Dashboard/GraficoCircular/GraficoCircular.component';
+import { GraficoRadarComponent } from './Pages/Dashboard/GraficoRadar/GraficoRadar.component';
 
 //Componentes
 //Separacion de User Create
@@ -45,7 +49,12 @@ import{ReactiveFormsModule} from '@angular/forms';
     EdituserComponent, 
     Header_navComponent,
     AgregaruserComponent, 
-    Body_navComponent
+    Body_navComponent,
+
+    //Dashboard
+    GraphicsbarrasComponent,
+    GraficoCircularComponent,
+    GraficoRadarComponent
       
    ],
   imports: [
