@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalAddUser.service';
-
 @Component({
-  selector: 'app-adduser',
-  templateUrl: './adduser.component.html',
+  selector: 'app-agregaruser',
+  templateUrl: './agregaruser.component.html',
   styleUrls: []
 })
-export class AdduserComponent {
+export class AgregaruserComponent {
 
   isModalOpenAUs:boolean = false;
 

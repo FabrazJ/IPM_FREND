@@ -1,41 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { SideNavComponent } from './SideNav/SideNav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 import { RecoveryComponent } from './login/recovery/recovery.component';
-import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
+
+import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 
 //Componentes
-import { HeaderComponent } from './sidebarc/usercreate/header/header.component';
-import { BodyComponent } from './sidebarc/usercreate/body/body.component';
-import { EdituserComponent } from './sidebarc/usercreate/body/Modals/edituser/edituser.component';
-import { AdduserComponent } from './sidebarc/usercreate/header/Modals/adduser/adduser.component';
+import { HeaderComponent } from './Pages/Usuarios/adduser/header/header.component';
+import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
+import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
+import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
 
 //Http modules
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+// import { SideComponent } from './Side/Side.component';
 import{ReactiveFormsModule} from '@angular/forms';
 
+// import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
+
+
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
+    SideNavComponent,
     LoginComponent,
-    SidebarComponent,
+    // SidebarComponent,
     RecoveryComponent,
-    UsercreateComponent,
+    AdduserComponent,
     DashboardComponent,
 
     //Componentes 
     HeaderComponent,
     BodyComponent,
     EdituserComponent,
-    AdduserComponent
-
-  ],
+    AgregaruserComponent,
+      
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
