@@ -6,10 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class Body_navComponent implements OnInit {
+  
+  
+  isUserCreateVisible: boolean = true;
+  isDashboardVisible: boolean = false;
 
+
+  isDropdownOpen = false;
+  isDropdownOpen1 = false;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  
+  toggleUserCreate() {
+    this.isUserCreateVisible = !this.isUserCreateVisible;
+  }
+  
+  toggleDashboard() {
+    this.isDashboardVisible = !this.isDashboardVisible;
+  }
+
+  toggleDropdown1() {
+    this.isDropdownOpen1 = !this.isDropdownOpen1;
+  }
 }

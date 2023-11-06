@@ -5,23 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './login/recovery/recovery.component';
-
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 
+//Componentes del SideNav
+import { Header_navComponent } from './SideNav/header_nav/header_nav.component';
+import { Body_navComponent } from './SideNav/body_nav/body_nav.component';
+
+
 //Componentes
+//Separacion de User Create
 import { HeaderComponent } from './Pages/Usuarios/adduser/header/header.component';
 import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
+//Modals de User Create 
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
+
 
 //Http modules
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// import { SideComponent } from './Side/Side.component';
 import{ReactiveFormsModule} from '@angular/forms';
 
-// import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -37,8 +42,10 @@ import{ReactiveFormsModule} from '@angular/forms';
     //Componentes 
     HeaderComponent,
     BodyComponent,
-    EdituserComponent,
-    AgregaruserComponent,
+    EdituserComponent, 
+    Header_navComponent,
+    AgregaruserComponent, 
+    Body_navComponent
       
    ],
   imports: [
