@@ -19,14 +19,5 @@ export class UsercreateComponent {
     this.showModalAddUser = !this.showModalAddUser;
   }
   
-  // Variable para controlar el modal de editar usuario
-  showModalEditUser = false;
-  
-  // Función para mostrar u ocultar el modal de editar usuario
-  toggleModalEditUser() {
-    this.showModalEditUser = !this.showModalEditUser;
-    // console.log('Modal state:', this.showModalEditUser); // Registro de estado en la consola
-  }
 
-  
 }
