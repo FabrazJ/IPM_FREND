@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from 'src/app/Servicios/ModalAddUser/ModalAddUser.service';
-
+import { ModalService } from 'src/app/Servicios/ModalDataService/ModalAddUser.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

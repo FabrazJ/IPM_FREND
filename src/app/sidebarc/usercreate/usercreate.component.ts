@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-usercreate',
   templateUrl: './usercreate.component.html',
-  styleUrls: ['./usercreate.component.css']
+  styleUrls: []
 })
 export class UsercreateComponent {
    constructor(private router: Router) {}

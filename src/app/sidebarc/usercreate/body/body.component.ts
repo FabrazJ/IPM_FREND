@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EdituserComponent } from './edituser/edituser.component';
-import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit/ModalEdit.service';
+import { EdituserComponent } from './Modals/edituser/edituser.component';
+import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',

@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 import { RecoveryComponent } from './login/recovery/recovery.component';
 import { UsercreateComponent } from './sidebarc/usercreate/usercreate.component';
-import { DashboardComponent } from './sidebarc/dashboard/dashboard.component';
+import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', 
