@@ -53,6 +53,8 @@ export class Body_navComponent implements OnInit {
   toggleTR(){
     this.isTRVisible=true;
     this.isDashboardVisible=false;
+    this.isUserCreateVisible = false; 
+    this.isRolCreateVisible=false;
   }
 
   toggleDropdown1() {
