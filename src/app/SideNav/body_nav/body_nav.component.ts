@@ -7,32 +7,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Body_navComponent implements OnInit {
   
-  
-  isUserCreateVisible: boolean = false;
-  isDashboardVisible: boolean = true;
-
-
-  isDropdownOpen = false;
-  isDropdownOpen1 = false;
-  
   constructor() { }
 
   ngOnInit() {
   }
 
+  isDashboardVisible: boolean = true;
+
+
+  isUserCreateVisible: boolean = false;
+  isRolCreateVisible: boolean = false;
+  isTRVisible: boolean = false;
+
+  isDropdownOpen = false;
+  isDropdownOpen1 = false;
   
+
   toggleUserCreate() {
-    this.isUserCreateVisible = true; // Asegúrate de ocultar el otro componente
-    this.isDashboardVisible = false; // Asegúrate de ocultar el otro componente
+    this.isUserCreateVisible = true; 
+    this.isDashboardVisible = false; 
+    this.isTRVisible = false; 
+    this.isRolCreateVisible=false;
+
 
   }
   
+  toggleRol(){
+    this.isRolCreateVisible=true;
+    this.isDashboardVisible=false;
+    this.isTRVisible = false; 
+    this.isUserCreateVisible=false;
+
+  }
+
   toggleDashboard() {
     this.isDashboardVisible = true;
-
     // this.isDashboardVisible = !this.isDashboardVisible;
-    this.isUserCreateVisible = false; // Asegúrate de ocultar el otro componente
+    this.isUserCreateVisible = false; 
+    this.isRolCreateVisible=false;
+    this.isTRVisible = false;
 
+
+  }
+
+  toggleTR(){
+    this.isTRVisible=true;
+    this.isDashboardVisible=false;
   }
 
   toggleDropdown1() {

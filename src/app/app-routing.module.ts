@@ -7,7 +7,8 @@ import { RecoveryComponent } from './login/recovery/recovery.component';
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { SideNavComponent } from './SideNav/SideNav.component';
-
+import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
+import { TimeReportComponent } from './Pages/Actividades/TimeReport/TimeReport.component';
 // import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 
 
@@ -22,6 +23,11 @@ const routes: Routes = [
 
   { path: 'adduser', 
     component: AdduserComponent },
+    
+  { path: 'addrol', 
+  component: AddrolComponent },
+  { path: 'tr', 
+  component: TimeReportComponent },
   { path: 'dashboard', 
     component: DashboardComponent }, // Ruta para el dashboard
   { path: '', 
