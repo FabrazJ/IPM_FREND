@@ -13,9 +13,10 @@ import { Header_navComponent } from './SideNav/header_nav/header_nav.component';
 import { Body_navComponent } from './SideNav/body_nav/body_nav.component';
 
 //Dashboard
-import { GraphicsbarrasComponent } from './Pages/Dashboard/graphicsbarras/graphicsbarras.component';
-import { GraficoCircularComponent } from './Pages/Dashboard/GraficoCircular/GraficoCircular.component';
-import { GraficoRadarComponent } from './Pages/Dashboard/GraficoRadar/GraficoRadar.component';
+import { EncabezadoComponent } from './Pages/Dashboard/Encabezado/Encabezado.component';
+import { GraphicsbarrasComponent } from './Pages/Dashboard/Graficos/graphicsbarras/graphicsbarras.component';
+import { GraficoCircularComponent } from './Pages/Dashboard/Graficos/GraficoCircular/GraficoCircular.component';
+import { GraficoRadarComponent } from './Pages/Dashboard/Graficos/GraficoRadar/GraficoRadar.component';
 
 //Componentes
 //Separacion de User Create
@@ -52,6 +53,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     Body_navComponent,
 
     //Dashboard
+    EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
     GraficoRadarComponent

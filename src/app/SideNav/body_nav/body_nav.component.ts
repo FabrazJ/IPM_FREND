@@ -22,11 +22,17 @@ export class Body_navComponent implements OnInit {
 
   
   toggleUserCreate() {
-    this.isUserCreateVisible = !this.isUserCreateVisible;
+    this.isUserCreateVisible = true; // Asegúrate de ocultar el otro componente
+    this.isDashboardVisible = false; // Asegúrate de ocultar el otro componente
+
   }
   
   toggleDashboard() {
-    this.isDashboardVisible = !this.isDashboardVisible;
+    this.isDashboardVisible = true;
+
+    // this.isDashboardVisible = !this.isDashboardVisible;
+    this.isUserCreateVisible = false; // Asegúrate de ocultar el otro componente
+
   }
 
   toggleDropdown1() {
