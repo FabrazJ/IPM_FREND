@@ -1,9 +1,7 @@
 
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
-import { EdituserComponent } from '../../adduser/body/Modals/edituser/edituser.component';
+import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
 import Swal from 'sweetalert2'
-import { Values } from './Enum/Values.enum';
 
 @Component({
   selector: 'app-body',
@@ -31,31 +29,40 @@ export class BodyComponent implements OnInit {
   }
 
 //Boton 
-
-  async options() {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-warning'
-      },
-      buttonsStyling: true,
-    });
-    swalWithBootstrapButtons.fire(
-    {
-      showCloseButton: true,
-      title: 'Presionaste Eliminar',
-      text: '¿Estas seguro?',
-      showCancelButton: true,
-      confirmButtonText: 'Si',
-      cancelButtonText: 'No',
-      reverseButtons: false
-    }
-    ).then((result) => {
-      if (result.value) {
-        console.log('dddd');
-        return;
+showDialog() {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger"
+    },
+    buttonsStyling: false
+  });
+  swalWithBootstrapButtons.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "No, cancel!",
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire({
+        title: "Cancelled",
+        text: "Your imaginary file is safe :)",
+        icon: "error"  
+        });
       }
-      console.log('cancel');
     });
   }
+
 }
