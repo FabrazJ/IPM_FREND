@@ -8,6 +8,11 @@ import { RecoveryComponent } from './login/recovery/recovery.component';
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 
+//NAV COMPONENTS
+import { CerrarSesionComponent } from './SideNav/header_nav/Componentes/CerrarSesion/CerrarSesion.component';
+import { ConfiguracionComponent } from './SideNav/header_nav/Componentes/Configuracion/Configuracion.component';
+import { CuentaComponent } from './SideNav/header_nav/Componentes/Cuenta/Cuenta.component';
+
 //Componentes del SideNav
 import { Header_navComponent } from './SideNav/header_nav/header_nav.component';
 import { Body_navComponent } from './SideNav/body_nav/body_nav.component';
@@ -22,6 +27,7 @@ import { GraficoRadarComponent } from './Pages/Dashboard/Graficos/GraficoRadar/G
 //Separacion de User Create
 import { HeaderComponent } from './Pages/Usuarios/adduser/header/header.component';
 import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
+
 //Modals de User Create 
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
@@ -39,6 +45,12 @@ import{ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     SideNavComponent,
     LoginComponent,
+
+    //NAV
+    CuentaComponent,
+    ConfiguracionComponent,
+    CerrarSesionComponent,
+    
     // SidebarComponent,
     RecoveryComponent,
     AdduserComponent,
