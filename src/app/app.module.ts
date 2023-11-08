@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './login/recovery/recovery.component';
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
+import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
 
 //Componentes del SideNav
 import { Header_navComponent } from './SideNav/header_nav/header_nav.component';
@@ -26,6 +27,15 @@ import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
 
+//Componentes
+//Modales Rol
+import { ModalComponent } from './Pages/Usuarios/addrol/modal/modal.component';
+
+//Componentes
+//Actividades
+import { TimeReportComponent } from './Pages/Actividades/TimeReport/TimeReport.component';
+import { RegistroComponent } from './Pages/Actividades/TimeReport/registro/registro.component';
+import { TablaComponent } from './Pages/Actividades/TimeReport/tabla/tabla.component';
 
 //Http modules
 import { HttpClientModule } from '@angular/common/http';
@@ -42,7 +52,8 @@ import{ReactiveFormsModule} from '@angular/forms';
     // SidebarComponent,
     RecoveryComponent,
     AdduserComponent,
-    DashboardComponent,
+    AddrolComponent,
+    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent,
 
     //Componentes 
     HeaderComponent,
@@ -51,6 +62,8 @@ import{ReactiveFormsModule} from '@angular/forms';
     Header_navComponent,
     AgregaruserComponent, 
     Body_navComponent,
+    //modal rol 
+    ModalComponent,
 
     //Dashboard
     EncabezadoComponent,
