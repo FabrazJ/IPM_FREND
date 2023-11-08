@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalAddRolService } from 'src/app/Servicios/ModalDataService/ModalAddRol.service';
+import { DataDeleteService } from 'src/app/Servicios/ModalDataService/datadelete.service';
 
 @Component({
   selector: 'app-addrol',
@@ -7,6 +8,8 @@ import { ModalAddRolService } from 'src/app/Servicios/ModalDataService/ModalAddR
   styleUrls: []
 })
 export class AddrolComponent {
+
+
 
 
   constructor(private modalAddRol: ModalAddRolService) {}

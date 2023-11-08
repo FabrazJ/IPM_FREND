@@ -45,7 +45,7 @@ import{ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     SideNavComponent,
     LoginComponent,
@@ -69,7 +69,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
-    GraficoRadarComponent
+    GraficoRadarComponent,
       
    ],
   imports: [
