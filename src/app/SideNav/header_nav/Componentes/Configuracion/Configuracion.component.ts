@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { ModalConfiguracionService } from 'src/app/Servicios/ModalDataServiceHS/ModalConfiguracion.service';
 @Component({
   selector: 'app-Configuracion',
   templateUrl: './Configuracion.component.html',
   styleUrls: []
 })
-export class ConfiguracionComponent implements OnInit {
 
-  constructor() { }
+export class ConfiguracionComponent {
 
-  ngOnInit() {
+  isModalOpenConf:boolean = false;
+
+  constructor(private modalConf: ModalConfiguracionService) {
+    modalConf.isModalOpenConf$.subscribe(isOpen => 
+      this.isModalOpenConf = isOpen);
+  }
+
+  OpenConfModal() {
+    this.isModalOpenConf = true;
+  }
+
+  CloseConfModal() {
+    this.isModalOpenConf = false;
   }
 
 }
