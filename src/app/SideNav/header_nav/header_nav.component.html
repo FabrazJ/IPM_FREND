@@ -22,9 +22,17 @@
               </svg>
            </button>
            <div *ngIf="isDropdownOpen" class="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Cuenta</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Configuración</a>
-              <a href="#" class="block px-4 py-2 hover-bg-gray-100 dark-hover-bg-gray-600 dark-hover-text-white">Cerrar sesión</a>
+              <button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+               Cuenta</button>
+
+              <button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+               Configuración</button>
+               
+              <button (click)="OpenSesModal()" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+               Cerrar sesión
+             </button>
+             <app-CerrarSesion></app-CerrarSesion>
+             
            </div>
         </div>
      </div>
