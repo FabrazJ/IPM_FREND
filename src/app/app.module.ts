@@ -48,11 +48,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
+import { ScABComponent } from './Pages/Oficina/ScA/ScAB/ScAB.component';
+import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
+import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
+import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
 
 @NgModule({
   declarations: [			
-    AppComponent,
+    AppComponent,LineHeaderComponent,
+    ScABComponent,
+    ScAComponent,
+    ScAHComponent,
     SideNavComponent,
     LoginComponent,
 
