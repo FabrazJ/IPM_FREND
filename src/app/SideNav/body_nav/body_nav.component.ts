@@ -18,6 +18,8 @@ export class Body_navComponent implements OnInit {
   isUserCreateVisible: boolean = false;
   isRolCreateVisible: boolean = false;
   isTRVisible: boolean = false;
+  isScAVisible: boolean= false;
+
 
   isDropdownOpen = false;
   isDropdownOpen1 = false;
@@ -28,6 +30,7 @@ export class Body_navComponent implements OnInit {
     this.isDashboardVisible = false; 
     this.isTRVisible = false; 
     this.isRolCreateVisible=false;
+    this.isScAVisible=false;
 
 
   }
@@ -37,6 +40,7 @@ export class Body_navComponent implements OnInit {
     this.isDashboardVisible=false;
     this.isTRVisible = false; 
     this.isUserCreateVisible=false;
+    this.isScAVisible=false;
 
   }
 
@@ -45,16 +49,27 @@ export class Body_navComponent implements OnInit {
     // this.isDashboardVisible = !this.isDashboardVisible;
     this.isUserCreateVisible = false; 
     this.isRolCreateVisible=false;
-    this.isTRVisible = false;
+    this.isTRVisible = false;   
+    this.isScAVisible=false;
 
 
   }
 
+  toggleScA(){
+    this.isScAVisible=true;
+    this.isTRVisible=false;
+    this.isDashboardVisible=false;
+    this.isUserCreateVisible = false; 
+    this.isRolCreateVisible=false;
+
+  }
   toggleTR(){
     this.isTRVisible=true;
     this.isDashboardVisible=false;
     this.isUserCreateVisible = false; 
     this.isRolCreateVisible=false;
+    this.isScAVisible=false;
+
   }
 
   toggleDropdown1() {

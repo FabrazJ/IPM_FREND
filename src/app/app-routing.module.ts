@@ -9,6 +9,7 @@ import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { SideNavComponent } from './SideNav/SideNav.component';
 import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
 import { TimeReportComponent } from './Pages/Actividades/TimeReport/TimeReport.component';
+import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 // import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
 
 
@@ -28,6 +29,10 @@ const routes: Routes = [
   component: AddrolComponent },
   { path: 'tr', 
   component: TimeReportComponent },
+  
+  {path: 'asignacion',
+  component: ScAComponent},
+
   { path: 'dashboard', 
     component: DashboardComponent }, // Ruta para el dashboard
   { path: '', 

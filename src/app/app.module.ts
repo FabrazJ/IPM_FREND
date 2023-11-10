@@ -49,13 +49,19 @@ import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
 
-
+//Componentes ScA
+import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
+import { ScABComponent } from './Pages/Oficina/ScA/ScAB/ScAB.component';
+import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
+import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 @NgModule({
   declarations: [		
     AppComponent,
     SideNavComponent,
     LoginComponent,
-
+    ScAComponent,
+    ScABComponent,
+    ScAHComponent,
     //NAV
     CuentaComponent,
     ConfiguracionComponent,
@@ -65,7 +71,10 @@ import{ReactiveFormsModule} from '@angular/forms';
     RecoveryComponent,
     AdduserComponent,
     AddrolComponent,
-    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent,
+    DashboardComponent,
+    TimeReportComponent,
+    RegistroComponent,
+    TablaComponent,
 
     //Componentes 
     HeaderComponent,
@@ -81,7 +90,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
-    GraficoRadarComponent
+    GraficoRadarComponent,LineHeaderComponent,
       
    ],
   imports: [
