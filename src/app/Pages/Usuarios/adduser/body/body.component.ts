@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-body',
@@ -16,7 +16,7 @@ export class BodyComponent implements OnInit {
   }
 
   constructor(private modalServiceD: ModalService) {}
-  
+
   isModalOpen = false;
 
   openModal() {
@@ -28,7 +28,7 @@ export class BodyComponent implements OnInit {
     this.isModalOpen = false;
   }
 
-//Boton 
+//Boton
 showDialog() {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -59,7 +59,7 @@ showDialog() {
       swalWithBootstrapButtons.fire({
         title: "Cancelled",
         text: "Your imaginary file is safe :)",
-        icon: "error"  
+        icon: "error"
         });
       }
     });
