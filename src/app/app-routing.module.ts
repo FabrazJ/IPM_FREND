@@ -11,7 +11,7 @@ import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
 import { TimeReportComponent } from './Pages/Actividades/TimeReport/TimeReport.component';
 import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 // import { SidebarComponent } from './sidebarc/sidebar/sidebar.component';
-
+import { Page404Component } from './login/Page404/Page404.component';
 
 const routes: Routes = [
   { path: 'login', 
@@ -32,6 +32,8 @@ const routes: Routes = [
   
   {path: 'asignacion',
   component: ScAComponent},
+  { path: 'page404', component: Page404Component },
+
 
   { path: 'dashboard', 
     component: DashboardComponent }, // Ruta para el dashboard
