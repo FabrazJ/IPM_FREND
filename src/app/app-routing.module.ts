@@ -32,7 +32,9 @@ const routes: Routes = [
   
   {path: 'asignacion',
   component: ScAComponent},
-  { path: 'page404', component: Page404Component },
+
+  { path: 'page404', 
+  component: Page404Component },
 
 
   { path: 'dashboard', 

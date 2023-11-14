@@ -1,78 +1,65 @@
 
 <div class="flex flex-col">
-  <div class="overflow-x-auto">
-      <div class="inline-block min-w-full align-middle">
-          <div class="overflow-hidden shadow">
-              <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
-                  <thead class="bg-gray-100 dark:bg-gray-700">
-                      <tr>
-                          <th scope="col" class="p-4">
-                              <div class="flex items-center">
-                                  <input id="checkbox-all" aria-describedby="checkbox-1" type="checkbox"
-                                      class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
-                                  <label for="checkbox-all" class="sr-only">checkbox</label>
-                              </div>
-                          </th>
-                          <th scope="col" class="p-4 text-xs font-medium text-center text-gray-500 uppercase dark:text-gray-400">
-                              Name
-                          </th>
-                          <th scope="col" class="p-4 text-xs font-medium text-center text-gray-500 uppercase dark:text-gray-400">
-                              Email
-                          </th>
-                          <th scope="col" class="p-4 text-xs font-medium text-center text-gray-500 uppercase dark:text-gray-400">
-                              Role
-                          </th>
-                          <th scope="col" class="p-4 text-xs font-medium text-center text-gray-500 uppercase dark:text-gray-400">
-                              Status
-                          </th>
-                          <th scope="col" class="p-4 text-xs font-medium text-center text-gray-500 uppercase dark:text-gray-400">
-                              Actions
-                          </th>
-                      </tr>
-                  </thead>
-                  <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-           <!-- Tabla de Usuarios -->
-                      <tr>
-                          <td class="p-4">
-                              <div class="flex items-center">
-                                  <input id="checkbox-1" aria-labelledby="checkbox-all" name="checkbox-1"
-                                      type="checkbox"
-                                      class="w-4 h-4 border-gray-300 rounded text-primary-400 bg-primary-200 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
-                                  <label for="checkbox-1" class="sr-only">checkbox</label>
-                              </div>
-                          </td>
-                          <td class="p-4 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                              Michelle Vargas
-                          </td>
-                          <td class="p-4 text-sm text-gray-500 dark:text-gray-400">
-                            dasdshahf
-                          </td>
-                          <td class="p-4 text-sm text-gray-500 dark:text-gray-400">
-                              Employee
-                          </td>
-                          <td class="px-6 py-4">
-                              <div class="flex items-center">
-                                  <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> Online
-                              </div>
-                          </td>
-                          <td class="p-4 space-x-2 whitespace-nowrap">
-                              <button (click)="openModal()" data-modal-toggle="edit-user-modal"  class="px-4 py-2 mr-2 text-xs font-medium text-red rounded-lg bg-white-500 hover:bg-gray-300 dark:bg-blue-600 dark:hover:bg-blue-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-                                  </svg>   
-                              </button>
-                              <app-edituser></app-edituser>
-                              
-                              <button (click)="showDialog()" type="button" data-modal-toggle="delete-user-modal" class="px-4 py-2 text-xs font-medium text-red rounded-lg bg-white-500 hover:bg-red-300 dark:bg-red-600 dark:hover:bg-red-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                                  </svg> 
-                             </button>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-              
-          </div>
-      </div>
+    <div class="overflow-x-auto">
+        <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden shadow">
+                <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
+                    <thead class="bg-gray-100 dark:bg-gray-700">
+  
+                        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Identificaci&oacute;n</th>
+                            <th class="py-3 px-6 text-left">Nombre Completo</th>
+                            <th class="py-3 px-6 text-center">Email</th>
+                            <th class="py-3 px-6 text-center">Status</th>
+                            <th class="py-3 px-6 text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 text-sm font-light">
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="mr-2">
+                                    </div>
+                                    <span class="font-medium">React Project</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                 
+                                    <span>Michelle Allison Vargas Orozco</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-center">
+                                <span>m.vargas.@gmail.com</span>
+                            </td>
+                            <td class="py-3 px-6 text-center">
+                                <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
+                            </td>
+                            <td class="py-3 px-6 text-center">
+                                <div class="flex item-center justify-center">
+                                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </div>
+                                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        </svg>
+                                    </div>
+                                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,68 +1,60 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from '../Servicios/UserService/auth.service';
-import { AuthRequest } from '../models/reports/AuthRequest';
+import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import Swal from 'sweetalert2';
 
+import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
+import { AuthRequest } from '../models/reports/AuthRequest';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../Servicios/UserService/auth.service';            
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  private apiUrl = `${environment.BASE_URL_API_IPM}/login`;
 
-  email: string = '';
-  password: string = '';
+  constructor(private http: HttpClient, private fb:FormBuilder,
+     private authService:AuthService, private router: Router) {}
 
-  constructor(private authService: AuthService) {}
-
-  login() {
-    this.authService.login(this.email, this.password).subscribe(
-      response => {
-        console.log('Respuesta del servidor:', response);
-
-        // Puedes realizar acciones adicionales después de iniciar sesión
-      },
-      error => {
-        console.error('Error al iniciar sesión:', error);
-      }
-    );
-  }
-
-  // email: string = '';
-  // password: string = '';
-
-  // constructor(private authService: AuthService) {}
-
-  // login() {
-  //   this.authService.login(this.email, this.password).subscribe((response) => {
-  //     // Manejar la respuesta del servidor, por ejemplo, almacenar el token en localStorage.
-  //     console.log(response);
-  //   });
-  // }
-//   loading = false;  // Variable para controlar el indicador de carga
-//   errorMessage = '';  // Mensaje de error que se mostrará al usuario en caso de falla
-
-//   frmUser = this.fb.group({
-//     email: ['', [Validators.required, Validators.email]],
-//     password: ['', [Validators.required, Validators.minLength(3)]]
-//   });
-
-//   constructor(
-//     private fb: FormBuilder,
-//     private authService: AuthService,
-//     private router: Router
-//   ) {}
-
-// login(){
-//   this.authService.login(this.email, this.password).subscribe((response) => {
-//     // Manejar la respuesta del servidor, por ejemplo, almacenar el token en localStorage.
-//     console.log(response);
-//   });
-// }
-
+  frmUser = this.fb.group({
+      email: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+      password: this.fb.control('', [Validators.required, Validators.minLength(3)])
+  });
 
   
+  authenticate() {
+    if(!this.frmUser.valid){
+      alert('Usuario o contraseña incorrectas');
+      return;
+    }
+
+    const authRequest: AuthRequest ={
+        email: String(this.frmUser.get('email').value),
+        password: String(this.frmUser.get('password').value)
+    };
+      this.authService,this.authenticate(authRequest).subscribe(resp=>{
+      
+      
+      
+      }
+  
+   
   }
+  // login(authRequest: AuthRequest): void {
+  //   // No necesitas empaquetar authRequest en un objeto adicional
+  //   this.http.post(`${this.apiUrl}`, authRequest)
+  //     .subscribe(
+  //       (response) => {
+  //         // Manejar la respuesta exitosa
+  //         console.log('Login exitoso', response);
+  //       },
+  //       (error) => {
+  //         // Manejar el error
+  //         console.error('Error en el login', error);
+  //       }
+  //     );
+  // }
+}
