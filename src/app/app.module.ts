@@ -9,6 +9,7 @@ import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
 
+
 //NAV COMPONENTS
 import { CerrarSesionComponent } from './SideNav/header_nav/Componentes/CerrarSesion/CerrarSesion.component';
 import { ConfiguracionComponent } from './SideNav/header_nav/Componentes/Configuracion/Configuracion.component';
@@ -33,9 +34,14 @@ import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
 
+
+
 //Componentes
 //Modales Rol
 import { ModalComponent } from './Pages/Usuarios/addrol/modal/modal.component';
+import { IPMAddEditComponent } from './Pages/Usuarios/addrol/modal/ipm-add-edit/ipm-add-edit.component';
+
+
 
 //Componentes
 //Actividades
@@ -54,6 +60,7 @@ import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
 
+
 @NgModule({
   declarations: [			
     AppComponent,LineHeaderComponent,
@@ -62,6 +69,7 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     ScAHComponent,
     SideNavComponent,
     LoginComponent,
+    
 
     //NAV
     CuentaComponent,
@@ -83,17 +91,25 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     Body_navComponent,
     //modal rol 
     ModalComponent,
+    IPMAddEditComponent,
+    
+    
+    
 
     //Dashboard
     EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
     GraficoRadarComponent,
+    
       
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
+    
+    
 
     //Http
     HttpClientModule,

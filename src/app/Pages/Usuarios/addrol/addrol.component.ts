@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { ModalAddRolService } from 'src/app/Servicios/ModalDataService/ModalAddRol.service';
-import { DataDeleteService } from 'src/app/Servicios/ModalDataService/datadelete.service';
+import { AddButtonUsuarioRolService } from 'src/app/Servicios/ModalDataService/add-button-usuario-rol.service';
+
 
 @Component({
-  selector: 'app-addrol',
-  templateUrl: './addrol.component.html',
+  selector: 'app-addrol', 
+  templateUrl: './addrol.component.html', 
   styleUrls: []
 })
 export class AddrolComponent {
 
 
-
-
-  constructor(private modalAddRol: ModalAddRolService) {}
+  constructor(private modalAddRol: ModalAddRolService, private modalAddButtonUsuarioRol: AddButtonUsuarioRolService, ) {}
   
   isModalAddRolS = false;
+  isAddButtonUsuarioRolS: boolean = false;
 
   openModalAddRol() {
     this.modalAddRol.openModalAddRol();
@@ -22,6 +22,14 @@ export class AddrolComponent {
 
   closeModalAddRol() {
     this.isModalAddRolS = false;
+  }
+
+  openModalNewAddRol() {
+    this.modalAddButtonUsuarioRol.openModalAddNewRol();
+  }
+
+  closeModalAddNewRol() {
+    this.isAddButtonUsuarioRolS = false;
   }
 
 
