@@ -32,7 +32,7 @@ import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 //Modals de User Create 
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
-
+import { DeleteuserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/deleteuser/deleteuser.component';
 //Componentes
 //Modales Rol
 import { ModalComponent } from './Pages/Usuarios/addrol/modal/modal.component';
@@ -66,7 +66,7 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     //NAV
     CuentaComponent,
     ConfiguracionComponent,
-    CerrarSesionComponent,
+    CerrarSesionComponent,DeleteuserComponent,
     
     // SidebarComponent,
     RecoveryComponent,

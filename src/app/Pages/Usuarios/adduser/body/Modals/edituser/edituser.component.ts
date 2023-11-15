@@ -2,14 +2,13 @@ import { Component} from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
   styleUrls: []
 })
 export class EdituserComponent  {
-
+ 
     isModalOpen:boolean = false;
 
     constructor(private modalServiceD: ModalService) {
@@ -24,21 +23,8 @@ export class EdituserComponent  {
     closeModal() {
       this.isModalOpen = false;
     }
-
-  //Visualizar contraseña 
-  showPassword = false;
-  password = '';
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
-
-  showPassword1 = false;
-  password1 = ''; 
-
-  togglePasswordVisibility1() {
-    this.showPassword1 = !this.showPassword;
-  }
+    
+    public isInputDisabled: boolean = true;
 
   ///PARA GUARDAR CAMBIOS
   showConfirmationDialog() {

@@ -25,24 +25,26 @@ export class LoginComponent {
   });
 
   
-  authenticate() {
-    if(!this.frmUser.valid){
-      alert('Usuario o contraseña incorrectas');
-      return;
-    }
+  // authenticate() {
+  //   if(!this.frmUser.valid){
+  //     alert('Usuario o contraseña incorrectas');
+  //     return;
+  //   }
 
-    const authRequest: AuthRequest ={
-        email: String(this.frmUser.get('email').value),
-        password: String(this.frmUser.get('password').value)
-    };
-      this.authService,this.authenticate(authRequest).subscribe(resp=>{
+  //   const authRequest: AuthRequest ={
+  //       email: String(this.frmUser.get('email').value),
+  //       password: String(this.frmUser.get('password').value)
+  //   };
+  //     this.authService,this.authenticate(authRequest).subscribe(resp=>{
+
+  //     })  
       
       
       
-      }
+  //     }
   
    
-  }
+  // }
   // login(authRequest: AuthRequest): void {
   //   // No necesitas empaquetar authRequest en un objeto adicional
   //   this.http.post(`${this.apiUrl}`, authRequest)

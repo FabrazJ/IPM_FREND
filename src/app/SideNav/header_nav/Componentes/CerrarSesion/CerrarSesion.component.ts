@@ -12,7 +12,8 @@ export class CerrarSesionComponent  {
     
   isModalOpenSes:boolean = false;
 
-  constructor(private modalSesionS: ModalSesionService, private router:Router) {
+  constructor(private modalSesionS: ModalSesionService,
+     private router:Router) {
     modalSesionS.isModalOpenSes$.subscribe(isOpen => 
       this.isModalOpenSes = isOpen);
   }

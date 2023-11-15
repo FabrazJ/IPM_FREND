@@ -2,7 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
 import Swal from 'sweetalert2'
-
+import { Renderer2, ElementRef, HostListener } from '@angular/core';
+import { ModalDeleteUserService } from 'src/app/Servicios/ModalDataService/ModalDeleteUser.service';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -11,11 +12,20 @@ import Swal from 'sweetalert2'
 
 })
 export class BodyComponent implements OnInit {
+  
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: Event) {
+      if (this.mostrarPopover && !this.el.nativeElement.contains(event.target)) {
+          this.mostrarPopover = false;
+      } 
+  }
 
   ngOnInit() {
   }
 
-  constructor(private modalServiceD: ModalService) {}
+  constructor(private modalServiceD: ModalService, 
+    private renderer: Renderer2, private el: ElementRef,
+    private modalDel: ModalDeleteUserService) {}
   
   isModalOpen = false;
 
@@ -28,41 +38,23 @@ export class BodyComponent implements OnInit {
     this.isModalOpen = false;
   }
 
-//Boton 
-showDialog() {
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: "btn btn-success",
-      cancelButton: "btn btn-danger"
-    },
-    buttonsStyling: false
-  });
-  swalWithBootstrapButtons.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonText: "Yes, delete it!",
-    cancelButtonText: "No, cancel!",
-    reverseButtons: true
-  }).then((result) => {
-    if (result.isConfirmed) {
-      swalWithBootstrapButtons.fire({
-        title: "Deleted!",
-        text: "Your file has been deleted.",
-        icon: "success"
-      });
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      swalWithBootstrapButtons.fire({
-        title: "Cancelled",
-        text: "Your imaginary file is safe :)",
-        icon: "error"  
-        });
-      }
-    });
+  mostrarPopover = false;
+
+  togglePopover() {
+    this.mostrarPopover = !this.mostrarPopover;
   }
+
+//Boton eliminar
+isModalOpenDel =false;
+
+OpenDelModal(){
+  this.modalDel.OpenDelModal();
+  this.isModalOpenDel=false;
+}
+
+CloseDelModal(){
+  this.isModalOpenDel=false;
+}
+
 
 }
