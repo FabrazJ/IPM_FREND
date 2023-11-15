@@ -40,6 +40,7 @@ import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agr
 //Modales Rol
 import { ModalComponent } from './Pages/Usuarios/addrol/modal/modal.component';
 import { IPMAddEditComponent } from './Pages/Usuarios/addrol/modal/ipm-add-edit/ipm-add-edit.component';
+import { ConfDeleteComponent} from './Pages/Usuarios/addrol/modal/confdeletemodal/confdeletemodal.component';
 
 
 
@@ -92,6 +93,7 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     //modal rol 
     ModalComponent,
     IPMAddEditComponent,
+    ConfDeleteComponent,
     
     
     

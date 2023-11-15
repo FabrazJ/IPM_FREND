@@ -4,20 +4,18 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ModalAddRolService {
+export class DataDeleteService {
 
-  private isModalAddRolSource = new BehaviorSubject<boolean>(false);
-  isModalAddRolS$ = this.isModalAddRolSource.asObservable();
+  private isDeleteRolSource = new BehaviorSubject<boolean>(false);
+  isDeleteRolSource$ = this.isDeleteRolSource.asObservable();
 
-  openModalAddRol() {
-    this.isModalAddRolSource.next(true);
+  openModalDeleteRol() {
+    this.isDeleteRolSource.next(true);
   }
 
-  closeModalAddRol() {
-    this.isModalAddRolSource.next(false);
-  }
-
+  closeModalDeleteRol() {
+    this.isDeleteRolSource.next(false);
   
-
+  }
 
 }
