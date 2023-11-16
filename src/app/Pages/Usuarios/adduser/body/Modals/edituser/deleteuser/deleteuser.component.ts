@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalDeleteUserService } from 'src/app/Servicios/ModalDataService/ModalDeleteUser.service'; 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-deleteuser',
   templateUrl: './deleteuser.component.html',
@@ -9,15 +10,17 @@ import { Router } from '@angular/router';
 })
 export class DeleteuserComponent implements OnInit {
   
-  isModalOpenDel: boolean =false;
 
   constructor(private modalDel: ModalDeleteUserService, 
-    private router:Router) { 
+    private router:Router, private route:ActivatedRoute) { 
       modalDel.isModalOpenDel$.subscribe(isOpen => 
         this.isModalOpenDel = isOpen);
     }
     ngOnInit() {
     }
+
+    isModalOpenDel: boolean = false;
+
     OpenDelModal(){
       this.isModalOpenDel=true;
     }
@@ -25,19 +28,20 @@ export class DeleteuserComponent implements OnInit {
     CloseDelModal(){
       this.isModalOpenDel=false;
     }
-  //SwitchAlert
-  DeleteUser() {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Exit',
-      showConfirmButton: false,
-      timer: 1500
-    }).then(() => {
-      // Redirigir al usuario a la página de inicio de sesión
-      this.router.navigate(['/adduser']); // Reemplaza 'login' con la ruta real de tu página de inicio de sesión
-    });
-  }
+    DeleteUser() {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Delete',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        // Redirigir al usuario a la página home/adduser
+        this.router.navigate(['home']);
+        this.isModalOpenDel=false;
+
+      });
+    }
 
 
 

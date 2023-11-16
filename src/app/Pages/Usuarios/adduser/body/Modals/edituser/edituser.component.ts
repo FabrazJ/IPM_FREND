@@ -37,8 +37,12 @@ export class EdituserComponent  {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Saved!", "", "success");
+        this.isModalOpen = false;
+
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
+        this.isModalOpen = false;
+
       }
     });
   }

@@ -1,8 +1,10 @@
 export interface User {
+   id:number;
    identificacion:string;
-   nombresCompletos:string;
+   nombres:string;
+   apellidos:string;
    email: string;
    contraseña:string;
    confirmarClave:string;
-   estado:CharacterData;
+   estado:string;
 }

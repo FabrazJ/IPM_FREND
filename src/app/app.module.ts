@@ -53,6 +53,7 @@ import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
+//Servicios
 
 @NgModule({
   declarations: [			
@@ -66,13 +67,20 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     //NAV
     CuentaComponent,
     ConfiguracionComponent,
-    CerrarSesionComponent,DeleteuserComponent,
+    CerrarSesionComponent,
+    DeleteuserComponent,
     
     // SidebarComponent,
     RecoveryComponent,
-    AdduserComponent,
+    
     AddrolComponent,
-    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent,
+    AdduserComponent,
+
+    DashboardComponent,
+    TimeReportComponent,
+    RegistroComponent,
+    TablaComponent,
+
 
     //Componentes 
     HeaderComponent,

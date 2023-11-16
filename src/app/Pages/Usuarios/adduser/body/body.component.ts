@@ -45,16 +45,16 @@ export class BodyComponent implements OnInit {
   }
 
 //Boton eliminar
-isModalOpenDel =false;
-
-OpenDelModal(){
-  this.modalDel.OpenDelModal();
-  this.isModalOpenDel=false;
-}
-
-CloseDelModal(){
-  this.isModalOpenDel=false;
-}
-
+  isModalOpenDel = false;
+  
+  OpenDelModal(){
+    this.modalDel.OpenDelModal();
+    this.isModalOpenDel = false;
+  }
+  
+  CloseDelModal(){
+    this.isModalOpenDel = false;
+  }
+  
 
 }
