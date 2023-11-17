@@ -79,9 +79,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            //SSL del login del angular json
             "ssl":true,
-            //
             "polyfills": [
               "zone.js",
               "zone.js/testing"
