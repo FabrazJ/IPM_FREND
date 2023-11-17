@@ -7,6 +7,8 @@ import Chart from 'chart.js/auto';
   styleUrls: []
 })
 export class GraficoRadarComponent  implements AfterViewInit {
+//Usando chart para hacer una simulacion en el grafico radar con datos irreales
+//Donde se muestren las actividades
 
   ngAfterViewInit(): void {
     const canvas: HTMLCanvasElement | null = document.getElementById('myRadarChart') as HTMLCanvasElement;

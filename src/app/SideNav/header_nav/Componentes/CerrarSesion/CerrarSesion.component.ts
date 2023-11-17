@@ -8,15 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: []
 })
 export class CerrarSesionComponent  {
-
-    
-  isModalOpenSes:boolean = false;
-
-  constructor(private modalSesionS: ModalSesionService,
-     private router:Router) {
+  
+  //VARIABLES DE LOS CONSTRUCTORES QUE NECESITAMOS
+  constructor(
+    //SERVICIO DE SESION
+    private modalSesionS: ModalSesionService,
+    //VARIABLE PARA ENRUTAR
+     private router:Router
+     ) {
+      //MODAL DE CERRAR SESION
     modalSesionS.isModalOpenSes$.subscribe(isOpen => 
       this.isModalOpenSes = isOpen);
-  }
+    }
+  //BOTON DE CERRAR SESION DONDE SE ABRE EL MODAL 
+  isModalOpenSes:boolean = false;
 
   OpenSesModal() {
     this.isModalOpenSes = true;
@@ -26,7 +31,7 @@ export class CerrarSesionComponent  {
     this.isModalOpenSes = false;
   }
 
-  //SwitchAlert
+  //SwitchAlert CUANDO SE DE YES IM A SURE, SE MUESTRE EL SWITCH PARA UNA SALIDA DE SESION CON EXITO
   Exit() {
     Swal.fire({
       position: 'center',

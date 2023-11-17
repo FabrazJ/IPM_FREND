@@ -1,8 +1,9 @@
+<!-- Pagina del Dashboard -->
 <div class="p-4 sm:ml-64">
   <div class="p-2 border-0 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-12">
     <app-Encabezado></app-Encabezado>
     <h1 class="text-2xl font-semibold mb-4">Dashboard</h1>
-   
+   <!-- Views de prueba -->
     <div class="m-10 grid gap-5 sm:grid-cols-3  mx-auto max-w-screen-lg">
       <div class="px-4 py-6 shadow-lg shadow-blue-100">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 rounded-xl bg-blue-400 p-4 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -45,16 +46,18 @@
         <span class="text-xs text-gray-400">+4.9%</span>
       </div>
     </div>
-    
+    <!-- Div donde se encuentra cada Grafica -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="bg-white p-10 rounded shadow-md">
+        <!-- Grafico de barras -->
         <app-graphicsbarras></app-graphicsbarras>
       </div>
       <div class="bg-white p-4 rounded shadow-md">
+        <!-- Grafico Circular -->
         <app-GraficoCircular></app-GraficoCircular>     
       </div>
-
       <div class="bg-white p-4 rounded shadow-md">
+        <!-- Grafico Radar -->
       <app-GraficoRadar></app-GraficoRadar>
       </div>
       <!-- Agrega más paneles según sea necesario -->

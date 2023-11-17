@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//IMPORTACIONES DE PAGINAS
 import { SideNavComponent } from './SideNav/SideNav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
+//MODULOS DE ASIGNACION DE EQUIPOS CON SUS COMPONENTES
 import { ScABComponent } from './Pages/Oficina/ScA/ScAB/ScAB.component';
 import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';

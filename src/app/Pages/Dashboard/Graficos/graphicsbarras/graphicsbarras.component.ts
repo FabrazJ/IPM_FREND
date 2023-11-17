@@ -7,6 +7,8 @@ import Chart from 'chart.js/auto';
   styleUrls: []
 })
 export class GraphicsbarrasComponent implements AfterViewInit {
+//Usando chart para hacer una simulacion en el grafico de barras con datos irreales
+//Donde se muestren las cantidades de horas trabajas y el total de horas mensuales, semanales y diarias
 
   ngAfterViewInit(): void {
     const canvas: HTMLCanvasElement | null = document.getElementById('myBarChart') as HTMLCanvasElement;

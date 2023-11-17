@@ -1,15 +1,20 @@
+<!-- PAGINA DE RECUPERACION DE CONTRASEÑA -->
 <div class="flex min-h-screen items-center justify-center bg-gray-100"  style="background-color:rgb(21, 16, 16)">
     <div class="bg-white p-8 rounded-lg shadow-md w-96">
       <h1 class="text-2xl font-semibold mb-4">Recuperación de contraseña</h1>
+      <!-- formulario de resetear contraseña en el cual tiene la funcion de que vuelva el login con el boton back to login -->
       <form (submit)="resetPassword()">
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+          <!-- Caja de texto para insertar el correo -->
           <input type="email" id="email" name="email" class="w-full rounded border px-3 py-2">
         </div>
         <div class="mb-4">
+          <!-- Boton para recuperar correo de recuperacion  -->
           <button type="submit" class="w-full bg-indigo-500 text-white rounded py-2">Enviar correo de recuperación</button>
         </div>
       </form>
+      <!-- Este es el boton backtologin, para dirigirse al login, que es la pestaña publica -->
       <button (click)="goBackToLogin()" class="mt-4 w-full bg-indigo-200 text-indigo-800 hover:bg-indigo-300 hover:text-indigo-900 rounded py-2">Back to Login</button>
     </div>
   </div>

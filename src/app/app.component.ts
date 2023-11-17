@@ -10,8 +10,8 @@ export class AppComponent {
   title = 'IPM_FREND';
 
   constructor(private router: Router) {}
-
-  navigateToLogin() {
+  //CUANDO CARGUE, VAYA DIRECTAMENTE AL LOGIN
+    navigateToLogin() {
     this.router.navigate(['/login']);
   }
 

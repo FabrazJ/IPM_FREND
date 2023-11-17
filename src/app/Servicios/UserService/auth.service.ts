@@ -5,6 +5,8 @@ import { Response } from 'src/app/models/reports/Response.model';
 import { AuthRequest } from 'src/app/models/reports/AuthRequest';
 import { HttpClient } from '@angular/common/http';
 
+//SERVICIO PARA LA CONEXIÓN DE LAS APIS
+
 @Injectable({
   providedIn: 'root'
 })

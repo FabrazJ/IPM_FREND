@@ -9,13 +9,15 @@ import Swal from 'sweetalert2';
 })
 export class EdituserComponent  {
  
-    isModalOpen:boolean = false;
 
     constructor(private modalServiceD: ModalService) {
       modalServiceD.isModalOpen$.subscribe(isOpen => 
         this.isModalOpen = isOpen);
     }
-  
+
+    //Para abrir y cerrar el modal
+    isModalOpen:boolean = false;
+
     openModal() {
       this.isModalOpen = true;
     }
@@ -26,7 +28,7 @@ export class EdituserComponent  {
     
     public isInputDisabled: boolean = true;
 
-  ///PARA GUARDAR CAMBIOS
+  ///PARA GUARDAR CAMBIOS SWEET ALERT
   showConfirmationDialog() {
     Swal.fire({
       title: "Do you want to save the changes?",
