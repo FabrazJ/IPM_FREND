@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+// COMPONENTE DEL ADD USER
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
   styleUrls: []
 })
-export class AdduserComponent {
+export class AdduserComponent implements OnInit{
+  //VARIABLES PRIVADAS
+  constructor(private router: Router,
+    ) {}
+  
+  ngOnInit(): void {
+  }
 
-  constructor(private router: Router) {}
+
   goBackToLogin() {
     this.router.navigate(['/login']); // Redirige a la página de inicio de sesión
   }
@@ -20,5 +28,5 @@ export class AdduserComponent {
     this.showModalAddUser = !this.showModalAddUser;
   }
   
-
+  
 }

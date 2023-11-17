@@ -3,6 +3,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Estilos para el cargando que es una taza relledandose */
 .loader {
     width: 48px;
     height: 48px;

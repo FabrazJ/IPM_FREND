@@ -7,7 +7,8 @@ import Chart from 'chart.js/auto';
   styleUrls: []
 })
 export class GraficoCircularComponent implements AfterViewInit {
-
+//Usando chart para hacer una simulacion en el grafico circular con datos irreales
+//Donde se muestran los proyectos
   ngAfterViewInit(): void {
     const canvas: HTMLCanvasElement | null = document.getElementById('myPieChart') as HTMLCanvasElement;
     if (canvas) {

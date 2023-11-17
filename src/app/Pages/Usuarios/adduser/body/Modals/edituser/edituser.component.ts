@@ -2,21 +2,22 @@ import { Component} from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
   styleUrls: []
 })
 export class EdituserComponent  {
-
-    isModalOpen:boolean = false;
+ 
 
     constructor(private modalServiceD: ModalService) {
       modalServiceD.isModalOpen$.subscribe(isOpen => 
         this.isModalOpen = isOpen);
     }
-  
+
+    //Para abrir y cerrar el modal
+    isModalOpen:boolean = false;
+
     openModal() {
       this.isModalOpen = true;
     }
@@ -24,23 +25,10 @@ export class EdituserComponent  {
     closeModal() {
       this.isModalOpen = false;
     }
+    
+    public isInputDisabled: boolean = true;
 
-  //Visualizar contraseña 
-  showPassword = false;
-  password = '';
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
-
-  showPassword1 = false;
-  password1 = ''; 
-
-  togglePasswordVisibility1() {
-    this.showPassword1 = !this.showPassword;
-  }
-
-  ///PARA GUARDAR CAMBIOS
+  ///PARA GUARDAR CAMBIOS SWEET ALERT
   showConfirmationDialog() {
     Swal.fire({
       title: "Do you want to save the changes?",
@@ -51,8 +39,12 @@ export class EdituserComponent  {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Saved!", "", "success");
+        this.isModalOpen = false;
+
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
+        this.isModalOpen = false;
+
       }
     });
   }
