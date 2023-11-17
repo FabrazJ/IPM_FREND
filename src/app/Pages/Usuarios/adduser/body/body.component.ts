@@ -18,7 +18,7 @@ export class BodyComponent implements OnInit {
   constructor(private modalServiceD: ModalService) {}
 
   isModalOpen = false;
-
+  
   openModal() {
     this.modalServiceD.openModal();
         this.isModalOpen = false;
