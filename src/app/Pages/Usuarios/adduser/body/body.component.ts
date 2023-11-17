@@ -1,12 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
-import Swal from 'sweetalert2'
-import { Renderer2, ElementRef, HostListener } from '@angular/core';
+import Swal from 'sweetalert2';
+import { HostListener } from '@angular/core';
+import { Renderer2,ElementRef } from '@angular/core';
 import { ModalDeleteUserService } from 'src/app/Servicios/ModalDataService/ModalDeleteUser.service';
-//Importaciones para la API
 import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
-import { User } from 'src/app/models/reports/User.model';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -15,7 +14,7 @@ import { User } from 'src/app/models/reports/User.model';
 
 })
 export class BodyComponent implements OnInit {
-  
+
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
       if (this.mostrarPopover && !this.el.nativeElement.contains(event.target)) {
@@ -34,7 +33,7 @@ export class BodyComponent implements OnInit {
     }
   //BOTON DE EDITAR QUE ABRE EL MODAL DE EDICIÓN
   isModalOpen = false;
-
+  
   openModal() {
     this.modalServiceD.openModal();
         this.isModalOpen = false;
@@ -63,7 +62,6 @@ export class BodyComponent implements OnInit {
     this.isModalOpenDel = false;
   }
   //CONEXION API
-
 
 
 }
