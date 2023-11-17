@@ -33,7 +33,7 @@ import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 //Modals de User Create 
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
-
+import { DeleteuserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/deleteuser/deleteuser.component';
 
 
 //Componentes
@@ -60,8 +60,6 @@ import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
-
-
 @NgModule({
   declarations: [			
     AppComponent,LineHeaderComponent,
@@ -69,7 +67,7 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     ScAComponent,
     ScAHComponent,
     SideNavComponent,
-    LoginComponent,
+    LoginComponent,DeleteuserComponent,
     
 
     //NAV
