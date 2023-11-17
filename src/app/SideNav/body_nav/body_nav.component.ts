@@ -14,7 +14,6 @@ export class Body_navComponent implements OnInit {
 
   isDashboardVisible: boolean = true;
 
-
   isUserCreateVisible: boolean = false;
   isRolCreateVisible: boolean = false;
   isTRVisible: boolean = false;
@@ -24,6 +23,7 @@ export class Body_navComponent implements OnInit {
   isDropdownOpen = false;
   isDropdownOpen1 = false;
   
+  //
 
   toggleUserCreate() {
     this.isUserCreateVisible = true; 
