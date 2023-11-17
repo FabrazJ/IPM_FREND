@@ -95,9 +95,6 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     IPMAddEditComponent,
     ConfDeleteComponent,
     
-    
-    
-
     //Dashboard
     EncabezadoComponent,
     GraphicsbarrasComponent,
@@ -109,9 +106,7 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
-    
-    
+
 
     //Http
     HttpClientModule,
