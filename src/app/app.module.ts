@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//IMPORTACIONES DE PAGINAS
 import { SideNavComponent } from './SideNav/SideNav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +8,7 @@ import { RecoveryComponent } from './login/recovery/recovery.component';
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
+
 
 //NAV COMPONENTS
 import { CerrarSesionComponent } from './SideNav/header_nav/Componentes/CerrarSesion/CerrarSesion.component';
@@ -33,10 +33,16 @@ import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 //Modals de User Create 
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
-import { DeleteuserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/deleteuser/deleteuser.component';
+
+
+
 //Componentes
 //Modales Rol
 import { ModalComponent } from './Pages/Usuarios/addrol/modal/modal.component';
+import { IPMAddEditComponent } from './Pages/Usuarios/addrol/modal/ipm-add-edit/ipm-add-edit.component';
+import { ConfDeleteComponent} from './Pages/Usuarios/addrol/modal/confdeletemodal/confdeletemodal.component';
+
+
 
 //Componentes
 //Actividades
@@ -49,13 +55,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
-//MODULOS DE ASIGNACION DE EQUIPOS CON SUS COMPONENTES
 import { ScABComponent } from './Pages/Oficina/ScA/ScAB/ScAB.component';
 import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
-//Servicios
+
 
 @NgModule({
   declarations: [			
@@ -65,24 +70,18 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     ScAHComponent,
     SideNavComponent,
     LoginComponent,
+    
 
     //NAV
     CuentaComponent,
     ConfiguracionComponent,
     CerrarSesionComponent,
-    DeleteuserComponent,
     
     // SidebarComponent,
     RecoveryComponent,
-    
-    AddrolComponent,
     AdduserComponent,
-
-    DashboardComponent,
-    TimeReportComponent,
-    RegistroComponent,
-    TablaComponent,
-
+    AddrolComponent,
+    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent,
 
     //Componentes 
     HeaderComponent,
@@ -93,17 +92,26 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     Body_navComponent,
     //modal rol 
     ModalComponent,
+    IPMAddEditComponent,
+    ConfDeleteComponent,
+    
+    
+    
 
     //Dashboard
     EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
     GraficoRadarComponent,
+    
       
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
+    
+    
 
     //Http
     HttpClientModule,

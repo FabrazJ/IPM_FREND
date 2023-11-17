@@ -1,17 +1,21 @@
-// data.service.ts
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataDeleteService {
-  private data: any[] = []; // Reemplaza con tus datos reales
 
-  deleteData(index: number) {
-    this.data.splice(index, 1);
+  private isDeleteRolSource = new BehaviorSubject<boolean>(false);
+  isDeleteRolSource$ = this.isDeleteRolSource.asObservable();
+
+  openModalDeleteRol() {
+    this.isDeleteRolSource.next(true);
   }
 
-  getData() {
-    return this.data;
+  closeModalDeleteRol() {
+    this.isDeleteRolSource.next(false);
+  
   }
+
 }
