@@ -12,6 +12,7 @@ export class Header_navComponent implements OnInit {
   ngOnInit() {
   }
   
+  
   isDropdownOpen = false;
 
     

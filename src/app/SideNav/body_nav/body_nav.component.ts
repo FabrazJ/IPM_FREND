@@ -12,8 +12,8 @@ export class Body_navComponent implements OnInit {
   ngOnInit() {
   }
 
+  //Vistas que sean visibles sin nada de enrutamiento, sino mediante el evento click
   isDashboardVisible: boolean = true;
-
   isUserCreateVisible: boolean = false;
   isRolCreateVisible: boolean = false;
   isTRVisible: boolean = false;
@@ -23,7 +23,7 @@ export class Body_navComponent implements OnInit {
   isDropdownOpen = false;
   isDropdownOpen1 = false;
   
-  //
+  //Vista del User Create
 
   toggleUserCreate() {
     this.isUserCreateVisible = true; 
@@ -34,7 +34,8 @@ export class Body_navComponent implements OnInit {
 
 
   }
-  
+  //Vista del Rol
+
   toggleRol(){
     this.isRolCreateVisible=true;
     this.isDashboardVisible=false;
@@ -43,6 +44,9 @@ export class Body_navComponent implements OnInit {
     this.isScAVisible=false;
 
   }
+
+  //Vista del Dashboard
+
 
   toggleDashboard() {
     this.isDashboardVisible = true;
@@ -54,6 +58,7 @@ export class Body_navComponent implements OnInit {
 
 
   }
+    //Vista del Asignacion de equipos
 
   toggleScA(){
     this.isScAVisible=true;
@@ -61,8 +66,9 @@ export class Body_navComponent implements OnInit {
     this.isDashboardVisible=false;
     this.isUserCreateVisible = false; 
     this.isRolCreateVisible=false;
-
   }
+
+  //Vista de Time Report (TR)
   toggleTR(){
     this.isTRVisible=true;
     this.isDashboardVisible=false;
