@@ -34,7 +34,7 @@ export class BodyComponent implements OnInit {
     }
   //BOTON DE EDITAR QUE ABRE EL MODAL DE EDICIÓN
   isModalOpen = false;
-
+  
   openModal() {
     this.modalServiceD.openModal();
         this.isModalOpen = false;
