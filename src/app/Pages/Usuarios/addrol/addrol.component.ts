@@ -4,7 +4,7 @@ import { AddButtonUsuarioRolService } from 'src/app/Servicios/ModalDataService/a
 import { DataDeleteService } from 'src/app/Servicios/ModalDataService/datadelete.service';
 
 
-@Component({
+@Component({  
   selector: 'app-addrol', 
   templateUrl: './addrol.component.html', 
   styleUrls: []
@@ -13,6 +13,7 @@ export class AddrolComponent {
 
 
   constructor(private modalAddRol: ModalAddRolService, private modalAddButtonUsuarioRol: AddButtonUsuarioRolService, private modalDeleteRol: DataDeleteService, ) {}
+  
   
   isModalAddRolS = false;
   isAddButtonUsuarioRolS: boolean = false;
