@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-
-
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 //importacion de los models por lo que se van a usar en la conexion de la API
@@ -20,19 +18,21 @@ export class LoginComponent {
 
   frmUser: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    contraseña: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
     remember: ['0', []]
   });
 
 
   login() {
-    console.log('llegue al login method');
-    console.log('this.frmUser',this.frmUser);
+
+
+   
     const credentials = {
       email: this.frmUser.value.email,
-      contraseña: this.frmUser.value.contraseña, // Cambiar 'contraseña' o 'password' según lo que estés usando
+      password: this.frmUser.value.password, // Cambiar 'contraseña' o 'password' según lo que estés usando
     };
 
+   
     this.authService.login(credentials).subscribe({
       next: (response) => {
         // Manejar la respuesta exitosa aquí, por ejemplo, almacenar el token
