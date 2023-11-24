@@ -51,7 +51,7 @@ import { RegistroComponent } from './Pages/Actividades/TimeReport/registro/regis
 import { TablaComponent } from './Pages/Actividades/TimeReport/tabla/tabla.component';
 
 //Http modules
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 
@@ -59,6 +59,7 @@ import { ScABComponent } from './Pages/Oficina/ScA/ScAB/ScAB.component';
 import { ScAComponent } from './Pages/Oficina/ScA/ScA.component';
 import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [			
@@ -111,7 +112,14 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
     FormsModule,    
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+   {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+   },
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

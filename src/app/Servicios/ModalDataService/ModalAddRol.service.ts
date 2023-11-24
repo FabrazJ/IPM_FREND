@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +12,8 @@ export class ModalAddRolService {
 //Este BehaviorSubject se inicializa con un valor booleano de false. BehaviorSubject es útil porque almacena el último valor
 // emitido y permite que los nuevos suscriptores obtengan inmediatamente el último valor.
   private isModalAddRolSource = new BehaviorSubject<boolean>(false);
+  
+
 //Se crea una propiedad pública llamada isModalAddRolS$ que es una versión observable del BehaviorSubject anterior. 
   isModalAddRolS$ = this.isModalAddRolSource.asObservable();
 //se llama para abrir el modal. 

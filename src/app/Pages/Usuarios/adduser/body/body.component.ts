@@ -6,6 +6,9 @@ import { HostListener } from '@angular/core';
 import { Renderer2,ElementRef } from '@angular/core';
 import { ModalDeleteUserService } from 'src/app/Servicios/ModalDataService/ModalDeleteUser.service';
 import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
+import { User } from 'src/app/models/reports/User.model';
+import { Response } from 'src/app/models/reports/Response.model';
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -14,7 +17,7 @@ import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
 
 })
 export class BodyComponent implements OnInit {
-
+users: User[] = [];
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
       if (this.mostrarPopover && !this.el.nativeElement.contains(event.target)) {
@@ -23,6 +26,12 @@ export class BodyComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.userService.getAllUs().subscribe(
+    (data: Response<User[]>) => {
+      this.users = data.data;
+      console.log(this.users);
+   },
+   );
   }
 
   constructor(private modalServiceD: ModalService, 

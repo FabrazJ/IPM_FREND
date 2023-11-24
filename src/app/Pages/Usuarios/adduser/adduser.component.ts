@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from 'src/app/Servicios/ModalDataService/ModalAddUser.service'
 
 // COMPONENTE DEL ADD USER
 @Component({
@@ -8,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: []
 })
 export class AdduserComponent implements OnInit{
+  
   //VARIABLES PRIVADAS
-  constructor(private router: Router,
+  constructor(private router: Router, private api: ModalService
     ) {}
   
-  ngOnInit(): void {
+  ngOnInit(){
+    
   }
 
 
