@@ -12,10 +12,10 @@ import { ApiResponse } from 'src/app/models/reports/ApiResponse';
 })
 export class AdduserService {
   constructor(private http: HttpClient){}
-  private apiUrl = `${environment.BASE_URL_API_IPM}/usuarios`;
+  private apiUrl = `${environment.BASE_URL_API_IPM}/registro-completo`;
  
   getUser(){
-    return this.http.get<ApiResponse>(this.apiUrl + "/usuarios");
+    return this.http.get<ApiResponse>(this.apiUrl + "registro-completo");
   }
 
   getAllUs(){

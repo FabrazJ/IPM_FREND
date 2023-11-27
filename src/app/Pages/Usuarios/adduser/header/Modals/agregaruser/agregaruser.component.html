@@ -39,7 +39,7 @@ justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal
                         <input formControlName="nombres" type="text" name="full-name" value="Green" id="last-name" class="shadow-sm bg-gray-50
                          border border-gray-300 text-gray-900 sm-text-sm rounded-lg focus-ring-primary-500 focus-border-primary-500 
                          block w-full p-2.5 dark-bg-gray-700 dark-border-gray-600 dark-placeholder-gray-400 dark-text-white 
-                         dark-focus-ring-primary-500 dark-focus-border-primary-500" placeholder="Nombre completo"
+                         dark-focus-ring-primary-500 dark-focus-border-primary-500" placeholder="Ingrese su nombre"
                            required>
                     </div>
                     <div class="col-span-6 sm:col-span-3">
@@ -48,34 +48,43 @@ justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal
                       <input formControlName="apellidos" type="text" name="full-name" value="Green" id="last-name" class="shadow-sm bg-gray-50
                        border border-gray-300 text-gray-900 sm-text-sm rounded-lg focus-ring-primary-500 focus-border-primary-500 
                        block w-full p-2.5 dark-bg-gray-700 dark-border-gray-600 dark-placeholder-gray-400 dark-text-white 
-                       dark-focus-ring-primary-500 dark-focus-border-primary-500" placeholder="Nombre completo"
+                       dark-focus-ring-primary-500 dark-focus-border-primary-500" placeholder="Ingrese su Apellido"
                          required>
                   </div>
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Email</label>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Email Personal</label>
                         <!-- Caja de texto email -->
                         <input formControlName="email" type="email" name="email" value="bonnie@flowbite.com" id="email" 
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm-text-sm rounded-lg 
                         focus-ring-primary-500 focus-border-primary-500 block w-full p-2.5 dark-bg-gray-700 dark-border-gray-600 
                         dark-placeholder-gray-400 dark-text-white dark-focus-ring-primary-500 dark-focus-border-primary-500" 
-                        placeholder="example@company.com" required>
+                        placeholder="example@gmail.com" required>
                     </div>
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="add-password" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Password</label>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Celular</label>
+                      <!-- Caja de texto email -->
+                      <input formControlName="email" type="number" name="email" value="bonnie@flowbite.com" id="email" 
+                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm-text-sm rounded-lg 
+                      focus-ring-primary-500 focus-border-primary-500 block w-full p-2.5 dark-bg-gray-700 dark-border-gray-600 
+                      dark-placeholder-gray-400 dark-text-white dark-focus-ring-primary-500 dark-focus-border-primary-500" 
+                      placeholder="0991725807" required>
+                  </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="add-password" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Email Corporativo</label>
                       <!-- Caja de texto de contraseña -->
-                        <input formControlName="password" name="add-password" value="" id="add-password" 
+                        <input formControlName="password" type="mail" name="add-password" value="" id="add-password" 
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm-text-sm rounded-lg 
                         focus-ring-primary-500 focus-border-primary-500 block w-full p-2.5 dark-bg-gray-700 
                         dark-border-gray-600 dark-placeholder-gray-400 dark-text-white dark-focus-ring-primary-500 
-                        dark-focus-border-primary-500" placeholder=" " required > 
+                        dark-focus-border-primary-500" placeholder="example@company.com " required > 
                         <button type="button">
                 
                         </button>
                     </div>
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="conf-password" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white"> Confirmar Password</label>
+                        <label for="conf-password" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white mt-[-30px]">Contraseña</label>
                         <!-- Caja de confirmacion de contraseña -->
-                        <input formControlName="confirmarpassword" name="conf-password" value="" id="conf-password" 
+                        <input formControlName="confirmarpassword" type = "password" name="conf-password" value="" id="conf-password" 
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm-text-sm rounded-lg 
                         focus-ring-primary-500 focus-border-primary-500 block w-full p-2.5 dark-bg-gray-700 dark-border-gray-600 
                         dark-placeholder-gray-400 dark-text-white dark-focus-ring-primary-500 dark-focus-border-primary-500" 
@@ -83,8 +92,7 @@ justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal
                       </div>
 
                       <div class="col-span-6 sm:col-span-3">
-
-                        <label for="Status" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white">Status</label>
+                        <label for="Status" class="block mb-2 text-sm font-medium text-gray-900 dark-text-white mt-[-30px]">Status</label>
                         <label formControlName="status" class="relative inline-flex items-center mr-5 cursor-pointer">
                           <!-- Check de estado A/I esa parte en la base de datos esta como un char  -->
                           <input type="checkbox" value="" class="sr-only peer" checked>
@@ -92,18 +100,18 @@ justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal
                           <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">A/I</span>
                         </label>
                     </div>
-                    <div class="col-span-6 sm:col-span-3">
-                  <!-- Boton de guardar usuario y que aparezca un sweet alert  -->
-                  <button (click)="ShowSaveUser()" type="button" class="text-blue-600 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
-                      <svg class="h-5 w-5 text-white-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />  <circle cx="12" cy="14" r="2" />  <polyline points="14 4 14 8 8 8 8 4" /></svg>               
-                          Save       
-                  </button>
-                  <!-- Boton de limpiar los campos, por favor completar -->
-                  <button type="button" class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-                      <svg class="h-5 w-5 text-white-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />  <path d="M21 3a16 16 0 0 0 -12.8 10.2" />  <path d="M21 3a16 16 0 0 1 -10.2 12.8" />  <path d="M10.6 9a9 9 0 0 1 4.4 4.4" /></svg>         
-                          Clear
-                   </button>
+                    <div class="flex items-center space-x-4">
+                      <button (click)="ShowSaveUser()" type="button" class="text-blue-600 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                        <svg class="h-5 w-5 text-white-500"  width="24" height="24" viewBox="0 0 24 24"  fill="none"  stroke="currentcolor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
+                          Guardar
+                      </button>
+                        <button type="button" class="text-dark-600 inline-flex items-center hover:text-white border border-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                          <svg class="h-5 w-5 text-white-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="red" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18 15a6 6 0 1 1 -10.853 -3.529c1.926-2.338 4.763-3.327 3.848-8.47 2.355 1.761 5.84 5.38 2.022 9.406-1.136 1.091-.244 2.767 1.221 2.593.882-.105 2.023-.966 3.23-2.3.532.68.532 1.717.532 2.3z" /></svg>
+                          Limpear
+                        </button>
                     </div>
+
+
                 </div>
             </form>
          </div>

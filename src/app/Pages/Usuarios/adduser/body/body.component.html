@@ -1,4 +1,5 @@
-
+<app-edituser></app-edituser>
+<app-deleteuser></app-deleteuser>
 <div class="flex flex-col">
     <div class="overflow-x-auto">
         <div class="inline-block min-w-full align-middle">
@@ -8,8 +9,11 @@
                         <!-- ENCABEZADO DE LA TABLA (TITULOS DE CADA COLUMNA) -->
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Identificaci&oacute;n</th>
-                            <th class="py-3 px-6 text-left">Nombre Completo</th>
+                            <th class="py-3 px-6 text-left">Nombres</th>
+                            <th class="py-3 px-6 text-left">Apellidos</th>
                             <th class="py-3 px-6 text-center">Email</th>
+                            <th class="py-3 px-6 text-center">Celular</th>
+                            <th class="py-3 px-6 text-center">EmailCorp</th>
                             <th class="py-3 px-6 text-center">Status</th>
                             <th class="py-3 px-6 text-center">Actions</th>
                         </tr>
@@ -20,19 +24,34 @@
                             <td class="py-3 px-6 text-left whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="mr-2"></div>
-                                    <span class="font-medium text-lg">{{user.identificacion}}
-                                    </span>
+                                    <span class="font-medium text-lg">{{user.identificacion}}</span>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
-                                    <span class="text-lg">{{user.nombres}} {{user.apellidos}}</span>
+                                    <span class="text-lg">{{user.nombres}}</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="text-lg">{{user.apellidos}}</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="text-lg">{{user.emailPersonal}}</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="text-lg"></span>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-center">
-                                <span class="text-lg">{{user.email}}</span>
+                                <span class="text-lg"></span>
                             </td>
                             <td class="py-3 px-6 text-center">
+                                <span class="text-lg"></span>
                                 <div class="flex justify-center items-center me-5 cursor-pointer">
                                     <label class="relative inline-flex items-center cursor-pointer">
                                         <input type="checkbox" value="" class="sr-only peer" checked disabled>
@@ -48,6 +67,7 @@
                             </td>
                             
                             <td class="py-3 px-6 text-center">
+                                <span class="text-lg"></span>
                                 <div class="flex items-center justify-center">
                                <!-- TOGGLE DE POP OVER PARA MOSTRAR LA CONTRASEÑA -->
 
@@ -79,7 +99,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                         </svg>
                                     </button>
-                                    <app-edituser></app-edituser>
+                                    <!-- <app-edituser></app-edituser> -->
 
                                 <!-- ABRIR MODAL DE ELIMINAR USUARIO-->
                                     <button (click)="OpenDelModal()" class="w-6 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -87,7 +107,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                         </svg>
                                     </button>
-                                    <app-deleteuser></app-deleteuser>
+                                    
                                 </div>
                             </td>
                         </tr>   
