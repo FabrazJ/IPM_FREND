@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   login(credentials: { email: string; password: string }): Observable<any> {
-  const loginUrl = `${this.apiUrl}/autenticacion/login`; // Aquí defines la URL correctament
+  const loginUrl = `${this.apiUrl}autenticacion/login`; // Aquí defines la URL correctament
 
   
   return this.http.post(loginUrl, credentials).pipe(

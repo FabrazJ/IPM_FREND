@@ -12,17 +12,21 @@ import { ApiResponse } from 'src/app/models/reports/ApiResponse';
 })
 export class AdduserService {
   constructor(private http: HttpClient){}
-  private apiUrl = `${environment.BASE_URL_API_IPM}/registro-completo`;
+  private apiUrl = `${environment.BASE_URL_API_IPM}usuarios/registro-completo`;
  
   getUser(){
-    return this.http.get<ApiResponse>(this.apiUrl + "registro-completo");
+    return this.http.get<ApiResponse>(this.apiUrl);
   }
 
   getAllUs(){
     return this.http.get<Response<User[]>>(this.apiUrl);
   }
 
-  createUs(userA:User){
-    return this.http.post<Response<User>>(this.apiUrl+"",userA);
-  }
+   createUs(userA:User){
+     return this.http.post<ApiResponse>(this.apiUrl,userA);
+   }
+  // createUs(user: User): Observable<any> {
+  //   const url = `${this.apiUrl}`; // Ajusta la ruta según tu API
+  //   return this.http.post(thijjs.apiUrl);
+  // }
 }

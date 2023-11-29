@@ -8,15 +8,20 @@ import { Router } from '@angular/router';
 import { ElementRef, Renderer2,ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
+import { User } from 'src/app/models/reports/User.model';
 @Component({
   selector: 'app-agregaruser',
   templateUrl: './agregaruser.component.html',
   styleUrls: []
 })
 export class AgregaruserComponent  implements OnInit{
-     
+  userForm: FormGroup;
+  
+  frmUserT!: FormGroup;
+
   ngOnInit(): void {
     this.frmUserT=this.defaultForm;
+    console.log('this.frmUserT');
   }
 
   //CONSTRUCTOR CON LAS VARIABLES QUE CORRESPONDE CADA UNA
@@ -26,10 +31,17 @@ export class AgregaruserComponent  implements OnInit{
     // VARIABLE DE AGREGAR RUTA 
     private router: Router,
     //VARIABLE DE ADD USER SERVICE (ES UN SERVICIO)
-    private userSrv:AdduserService,
+    private adduserservice:AdduserService,
 
     private fb:FormBuilder, 
     private renderer:Renderer2    ) {
+      this.userForm = this.fb.group({
+        nombres: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        // Agrega más campos según tus necesidades
+      });
+
+      
     modalAddUser.isModalOpenAUs$.subscribe(isOpen => 
       this.isModalOpenAUs = isOpen);
   }
@@ -56,33 +68,33 @@ export class AgregaruserComponent  implements OnInit{
       if (result.isConfirmed) {
         Swal.fire("Saved!", "", "success");
         this.isModalOpenAUs = false;
-
+        this.createUser();
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
         this.isModalOpenAUs = false;
+        this.createUser();
 
       }
     });
   }
 //CONEXION DE LA API LOS DATOS REQUERIDOS (NO ESTA 100% CONSUMIDA)
 //PERO PERSONITA QUE VA A CONECTAR BIEN LAS APIS, TEN MUCHO CUIDADO CON LAS VARIABLES
-frmUserT!:FormGroup;
 
 get defaultForm(){
   return this.fb.group({
     identificacion: this.fb.control('',[Validators.required, 
-      Validators.minLength(10), Validators.maxLength(10)]),
+      Validators.minLength(3), Validators.maxLength(10)]),
     nombres:this.fb.control('',[Validators.required, 
       Validators.minLength(3)]),
     apellidos: this.fb.control('', [Validators.required, 
       Validators.minLength(3)]),
-    email: this.fb.control('', [Validators.required, 
+    emailPersonal: this.fb.control('', [Validators.required, 
       Validators.email, Validators.minLength(3)]),
-    status: this.fb.control('', [Validators.required,
+    celular: this.fb.control('', [Validators.required, 
+        Validators.minLength(3)]),
+    emailCorporativo:this.fb.control('', [Validators.required, 
       Validators.minLength(3)]),
     password:this.fb.control('', [Validators.required, 
-      Validators.minLength(3)]),
-    confirmarpassword:this.fb.control('', [Validators.required, 
       Validators.minLength(3)])
   });
 }
@@ -125,20 +137,28 @@ createUser(){
     return;
   }
 
-  this.userSrv.createUs(this.frmUserT.value).subscribe(resp=>{
-    console.log(resp);
-    if(resp.success){
-      Swal.fire({ icon: 'success', title: 'Notificación', text: 'Usuario creado. Se enviaron las credenciales al correo electrónico '
-      + this.email?.value});
-      this.frmUserT.reset();
-    }else{
-      console.log('SUCCESS FALSE', resp);
-      Swal.fire({ icon: 'error', title: 'Notificación', text: resp.message});
+  this.adduserservice.createUs(this.frmUserT.value).subscribe({
+    next: (resp) => {
+      console.log(resp);
+      if (resp.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Notificación',
+          text: 'Usuario creado. Se enviaron las credenciales al correo electrónico ' + this.email?.value
+        });
+        this.frmUserT.reset();
+      } else {
+        console.log('SUCCESS FALSE', resp);
+        Swal.fire({
+          icon: 'error',
+          title: 'Notificación',
+          text: resp.message
+        });
+      }
+    },
+    error: (error) => {
+      console.error('Error al crear usuario:', error);
     }
-
-  }, (err) => {
-    console.log('ERR', err);
-    Swal.fire({ icon: 'error', title: 'Notificación', text: err.message});
   });
 
 }
