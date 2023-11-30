@@ -23,10 +23,7 @@ export class AdduserService {
   }
 
    createUs(userA:User){
-     return this.http.post<ApiResponse>(this.apiUrl,userA);
+     return this.http.post<Response<User[]>>(this.apiUrl + "",userA);
    }
-  // createUs(user: User): Observable<any> {
-  //   const url = `${this.apiUrl}`; // Ajusta la ruta según tu API
-  //   return this.http.post(thijjs.apiUrl);
-  // }
+  
 }

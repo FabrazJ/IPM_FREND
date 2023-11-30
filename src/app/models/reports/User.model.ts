@@ -12,5 +12,5 @@ export interface User {
    celular: string;
    contrasena:string;
    
-   estado:string;
+   
 }

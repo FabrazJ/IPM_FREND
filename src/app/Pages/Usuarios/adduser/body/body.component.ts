@@ -26,7 +26,7 @@ users: User[] = [];
   }
 
   ngOnInit() {
-   this.userService.getUser().subscribe(
+   this.userService.getAllUs().subscribe(
     (data: Response<User[]>) => {
       this.users = data.data;
       console.log(this.users);

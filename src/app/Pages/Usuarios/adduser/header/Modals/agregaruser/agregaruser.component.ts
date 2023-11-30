@@ -15,9 +15,11 @@ import { User } from 'src/app/models/reports/User.model';
   styleUrls: []
 })
 export class AgregaruserComponent  implements OnInit{
+
+  adduser!: User[];
   userForm: FormGroup;
-  
   frmUserT!: FormGroup;
+  
 
   ngOnInit(): void {
     this.frmUserT=this.defaultForm;
@@ -91,13 +93,17 @@ get defaultForm(){
     emailPersonal: this.fb.control('', [Validators.required, 
       Validators.email, Validators.minLength(3)]),
     celular: this.fb.control('', [Validators.required, 
-        Validators.minLength(3)]),
+        Validators.minLength(10)]),
     emailCorporativo:this.fb.control('', [Validators.required, 
       Validators.minLength(3)]),
-    password:this.fb.control('', [Validators.required, 
+    contrasena:this.fb.control('', [Validators.required, 
       Validators.minLength(3)])
   });
 }
+get id(){
+  return this.frmUserT.get('id');
+}
+
 
 get identificacion(){
   return this.frmUserT.get('identificacion');
@@ -111,22 +117,23 @@ get apellidos(){
   return this.frmUserT.get('apellidos')
 }
 
+get emailPersonal(){
+  return this.frmUserT.get('emailPersonal')
+}
+
+get emailCorporativo(){
+  return this.frmUserT.get('emailCorporativo')
+}
+get celular(){
+  return this.frmUserT.get('celular')
+}
+get contrasena(){
+  return this.frmUserT.get('contrasena')
+}
+
 get email(){
   return this.frmUserT.get('email')
 }
-
-get status(){
-  return this.frmUserT.get('status')
-}
-
-get password(){
-  return this.frmUserT.get('password')
-}
-
-get confirmarpassword(){
-  return this.frmUserT.get('confirmarpassword')
-}
-
 
 createUser(){
   console.log(this.frmUserT);
@@ -137,7 +144,20 @@ createUser(){
     return;
   }
 
-  this.adduserservice.createUs(this.frmUserT.value).subscribe({
+  const usuarioCreacion: User = {
+    id: this.id?.value,
+    identificacion: this.identificacion?.value, 
+    nombres: this.nombres?.value,
+    apellidos: this.apellidos?.value,
+    emailPersonal: this.emailPersonal?.value,
+    emailCorporativo: this.emailCorporativo?.value,
+    celular: this.celular?.value,
+    contrasena: this.contrasena?.value,
+
+
+  }
+
+  this.adduserservice.createUs(usuarioCreacion).subscribe({
     next: (resp) => {
       console.log(resp);
       if (resp.success) {
