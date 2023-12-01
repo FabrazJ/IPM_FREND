@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { HostListener } from '@angular/core';
 import { Renderer2,ElementRef } from '@angular/core';
 import { ModalDeleteUserService } from 'src/app/Servicios/ModalDataService/ModalDeleteUser.service';
-import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
+import { Userservice } from 'src/app/Servicios/UserService/user.service';
 import { User } from 'src/app/models/reports/User.model';
 import { Response } from 'src/app/models/reports/Response.model';
 
@@ -26,7 +26,7 @@ users: User[] = [];
   }
 
   ngOnInit() {
-   this.userService.getAllUs().subscribe(
+   this.userservice.getAllUs().subscribe(
     (data: Response<User[]>) => {
       this.users = data.data;
       console.log(this.users);
@@ -37,7 +37,7 @@ users: User[] = [];
   constructor(private modalServiceD: ModalService, 
     private renderer: Renderer2, private el: ElementRef,
     private modalDel: ModalDeleteUserService,
-    private userService:AdduserService) {
+    private userservice:Userservice) {
       
     }
   //BOTON DE EDITAR QUE ABRE EL MODAL DE EDICIÓN

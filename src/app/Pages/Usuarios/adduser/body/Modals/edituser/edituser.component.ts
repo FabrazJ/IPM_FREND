@@ -1,13 +1,26 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalEdit.service';
 import Swal from 'sweetalert2';
+import { ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ElementRef, Renderer2,ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Userservice } from 'src/app/Servicios/UserService/user.service';
+import { User } from 'src/app/models/reports/User.model';
+
 
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
   styleUrls: []
 })
-export class EdituserComponent  {
+export class EdituserComponent  implements OnInit{
+  
+  frmEditUserT!: FormGroup;
+  ngOnInit(): void {
+    // this.frmEditUserT=this.defaultForm;
+  }
  
 
     constructor(private modalServiceD: ModalService) {
@@ -27,6 +40,8 @@ export class EdituserComponent  {
     }
     
     public isInputDisabled: boolean = true;
+
+    
 
   ///PARA GUARDAR CAMBIOS SWEET ALERT
   showConfirmationDialog() {

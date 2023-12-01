@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/Servicios/ModalDataService/ModalAddUser.service';
 import Swal from 'sweetalert2';
-
-import {  OnInit } from '@angular/core';
+import { ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { ElementRef, Renderer2,ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
+import { Userservice } from 'src/app/Servicios/UserService/user.service';
 import { User } from 'src/app/models/reports/User.model';
 @Component({
+
   selector: 'app-agregaruser',
   templateUrl: './agregaruser.component.html',
   styleUrls: []
+  
+  
 })
 export class AgregaruserComponent  implements OnInit{
 
@@ -23,17 +25,19 @@ export class AgregaruserComponent  implements OnInit{
 
   ngOnInit(): void {
     this.frmUserT=this.defaultForm;
-    console.log('this.frmUserT');
+    
   }
 
   //CONSTRUCTOR CON LAS VARIABLES QUE CORRESPONDE CADA UNA
   constructor(
+    
+    private cdr: ChangeDetectorRef,
     // VARIABLE DE AGREGAR USUARIO 
     private modalAddUser: ModalService,
     // VARIABLE DE AGREGAR RUTA 
     private router: Router,
     //VARIABLE DE ADD USER SERVICE (ES UN SERVICIO)
-    private adduserservice:AdduserService,
+    private userservice:Userservice,
 
     private fb:FormBuilder, 
     private renderer:Renderer2    ) {
@@ -153,34 +157,71 @@ createUser(){
     emailCorporativo: this.emailCorporativo?.value,
     celular: this.celular?.value,
     contrasena: this.contrasena?.value,
-
-
   }
 
-  this.adduserservice.createUs(usuarioCreacion).subscribe({
-    next: (resp) => {
+  const id = 1; // Ejemplo de ID de usuario
+  const updatedUserInfo: User = {
+    nombres: 'Nuevo Nombre',
+    apellidos: 'Nuevo Apellido',
+    email: 'nuevo@example.com',
+    id: 0,
+    identificacion: '',
+    emailPersonal: '',
+    emailCorporativo: '',
+    celular: '',
+    contrasena: ''
+  };
+  
+  
+  this.userservice.updateUser(id, updatedUserInfo).subscribe({
+    next:(resp) => {
       console.log(resp);
-      if (resp.success) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Notificación',
-          text: 'Usuario creado. Se enviaron las credenciales al correo electrónico ' + this.email?.value
-        });
-        this.frmUserT.reset();
-      } else {
-        console.log('SUCCESS FALSE', resp);
-        Swal.fire({
-          icon: 'error',
-          title: 'Notificación',
-          text: resp.message
-        });
-      }
+      console.log('Usuario actualizado con éxito:', resp);
+      // Puedes realizar acciones adicionales después de la actualización
+    
     },
-    error: (error) => {
-      console.error('Error al crear usuario:', error);
+    error:(error) => {
+      console.error('Error al actualizar usuario:', error);
+      // Puedes manejar el error de alguna manera
     }
-  });
+    });
 
+
+  this.userservice.createUs(usuarioCreacion).subscribe({
+  next: (resp) => {
+    console.log(resp);
+    if (resp.success) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Notificación',
+        text: 'Usuario creado. Se enviaron las credenciales al correo electrónico ' + this.email?.value
+      });
+
+      this.frmUserT.reset();
+
+      // Forzar la detección de cambios después de la operación createUs
+     
+
+      this.userservice.getAllUs().subscribe({
+        next: (resp) => {
+          this.adduser = resp.data;
+          console.log('getallus', resp);
+        }
+      });
+
+    } else {
+      console.log('SUCCESS FALSE', resp);
+      Swal.fire({
+        icon: 'error',
+        title: 'Notificación',
+        text: resp.message
+      });
+    }
+  },
+  error: (error) => {
+    console.error('Error al crear usuario:', error);
+  }
+});
 }
 
 
