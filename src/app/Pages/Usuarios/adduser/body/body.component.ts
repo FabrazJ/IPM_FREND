@@ -19,21 +19,21 @@ export class BodyComponent implements OnInit {
   clickOutside(event: Event) {
       if (this.mostrarPopover && !this.el.nativeElement.contains(event.target)) {
           this.mostrarPopover = false;
-      } 
+      }
   }
 
   ngOnInit() {
   }
 
-  constructor(private modalServiceD: ModalService, 
+  constructor(private modalServiceD: ModalService,
     private renderer: Renderer2, private el: ElementRef,
     private modalDel: ModalDeleteUserService,
     private userService:AdduserService) {
-      
+
     }
   //BOTON DE EDITAR QUE ABRE EL MODAL DE EDICIÓN
   isModalOpen = false;
-  
+
   openModal() {
     this.modalServiceD.openModal();
         this.isModalOpen = false;

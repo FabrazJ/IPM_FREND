@@ -8,6 +8,9 @@ import { RecoveryComponent } from './login/recovery/recovery.component';
 import { AdduserComponent } from './Pages/Usuarios/adduser/adduser.component';
 import { DashboardComponent } from './Pages/Dashboard/dashboard.component';
 import { AddrolComponent } from './Pages/Usuarios/addrol/addrol.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterByFechaPipe } from 'src/app/Servicios/TimeReportService/DesplegarActividades.service'
 
 
 //NAV COMPONENTS
@@ -30,7 +33,7 @@ import { GraficoRadarComponent } from './Pages/Dashboard/Graficos/GraficoRadar/G
 import { HeaderComponent } from './Pages/Usuarios/adduser/header/header.component';
 import { BodyComponent } from './Pages/Usuarios/adduser/body/body.component';
 
-//Modals de User Create 
+//Modals de User Create
 import { EdituserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/edituser.component';
 import { AgregaruserComponent } from './Pages/Usuarios/adduser/header/Modals/agregaruser/agregaruser.component';
 import { DeleteuserComponent } from './Pages/Usuarios/adduser/body/Modals/edituser/deleteuser/deleteuser.component';
@@ -47,8 +50,13 @@ import { ConfDeleteComponent} from './Pages/Usuarios/addrol/modal/confdeletemoda
 //Componentes
 //Actividades
 import { TimeReportComponent } from './Pages/Actividades/TimeReport/TimeReport.component';
+import { EncabezadoTrComponent } from './Pages/Actividades/TimeReport/encabezado/encabezado.component';
 import { RegistroComponent } from './Pages/Actividades/TimeReport/registro/registro.component';
 import { TablaComponent } from './Pages/Actividades/TimeReport/tabla/tabla.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 //Http modules
 import { HttpClientModule } from '@angular/common/http';
@@ -61,45 +69,47 @@ import { ScAHComponent } from './Pages/Oficina/ScA/ScAH/ScAH.component';
 import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHeader.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,LineHeaderComponent,
     ScABComponent,
     ScAComponent,
     ScAHComponent,
     SideNavComponent,
     LoginComponent,DeleteuserComponent,
-    
+    FilterByFechaPipe,
+
 
     //NAV
     CuentaComponent,
     ConfiguracionComponent,
     CerrarSesionComponent,
-    
+
     // SidebarComponent,
     RecoveryComponent,
     AdduserComponent,
     AddrolComponent,
-    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent,
+    DashboardComponent,TimeReportComponent,RegistroComponent,TablaComponent, EncabezadoTrComponent,
 
-    //Componentes 
+
+    //Componentes
     HeaderComponent,
     BodyComponent,
-    EdituserComponent, 
+    EdituserComponent,
     Header_navComponent,
-    AgregaruserComponent, 
+    AgregaruserComponent,
     Body_navComponent,
-    //modal rol 
+    //modal rol
     ModalComponent,
     IPMAddEditComponent,
     ConfDeleteComponent,
-    
+
     //Dashboard
     EncabezadoComponent,
     GraphicsbarrasComponent,
     GraficoCircularComponent,
     GraficoRadarComponent,
-    
-      
+
+
    ],
   imports: [
     BrowserModule,
@@ -108,8 +118,17 @@ import { LineHeaderComponent } from './Pages/Oficina/ScA/ScAH/LineHeader/LineHea
 
     //Http
     HttpClientModule,
-    FormsModule,    
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
+    //Datepicker
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

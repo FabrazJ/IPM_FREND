@@ -14,23 +14,23 @@ import { AdduserService } from 'src/app/Servicios/UserService/adduser.service';
   styleUrls: []
 })
 export class AgregaruserComponent  implements OnInit{
-     
+
   ngOnInit(): void {
     this.frmUserT=this.defaultForm;
   }
 
   //CONSTRUCTOR CON LAS VARIABLES QUE CORRESPONDE CADA UNA
   constructor(
-    // VARIABLE DE AGREGAR USUARIO 
+    // VARIABLE DE AGREGAR USUARIO
     private modalAddUser: ModalService,
-    // VARIABLE DE AGREGAR RUTA 
+    // VARIABLE DE AGREGAR RUTA
     private router: Router,
     //VARIABLE DE ADD USER SERVICE (ES UN SERVICIO)
     private userSrv:AdduserService,
 
-    private fb:FormBuilder, 
+    private fb:FormBuilder,
     private renderer:Renderer2    ) {
-    modalAddUser.isModalOpenAUs$.subscribe(isOpen => 
+    modalAddUser.isModalOpenAUs$.subscribe(isOpen =>
       this.isModalOpenAUs = isOpen);
   }
   //BOTON DE AGREGAR USUARIO PARA EL MODAL DE USUARIO
@@ -70,19 +70,19 @@ frmUserT!:FormGroup;
 
 get defaultForm(){
   return this.fb.group({
-    identificacion: this.fb.control('',[Validators.required, 
+    identificacion: this.fb.control('',[Validators.required,
       Validators.minLength(10), Validators.maxLength(10)]),
-    nombres:this.fb.control('',[Validators.required, 
+    nombres:this.fb.control('',[Validators.required,
       Validators.minLength(3)]),
-    apellidos: this.fb.control('', [Validators.required, 
+    apellidos: this.fb.control('', [Validators.required,
       Validators.minLength(3)]),
-    email: this.fb.control('', [Validators.required, 
+    email: this.fb.control('', [Validators.required,
       Validators.email, Validators.minLength(3)]),
     status: this.fb.control('', [Validators.required,
       Validators.minLength(3)]),
-    password:this.fb.control('', [Validators.required, 
+    password:this.fb.control('', [Validators.required,
       Validators.minLength(3)]),
-    confirmarpassword:this.fb.control('', [Validators.required, 
+    confirmarpassword:this.fb.control('', [Validators.required,
       Validators.minLength(3)])
   });
 }
@@ -120,7 +120,7 @@ createUser(){
   console.log(this.frmUserT);
   if (this.frmUserT.invalid){
     this.frmUserT.markAllAsTouched();
-    Swal.fire({ icon: 'warning', title: 'Notificación', 
+    Swal.fire({ icon: 'warning', title: 'Notificación',
       text: 'Corrija los datos del usuario e intente nuevamente.'});
     return;
   }

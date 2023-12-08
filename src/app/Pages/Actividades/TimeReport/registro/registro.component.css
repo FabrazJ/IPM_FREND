@@ -1,0 +1,35 @@
+.datepicker-container {
+  border-radius: 50%;
+  width: 250px;
+  height: 55px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  /* Add this line */
+  border-radius: 0.5rem;
+}
+
+.relative {
+  position: relative; /* Already defined */
+}
+
+#dropdownHover {
+  position: absolute;
+  top: 55px; /* Adjust as needed for spacing */
+  left: 0;
+  width: 100%;
+}
+
+#dropdownHover {
+  z-index: 10; /* Set a higher value than other elements */
+}
+
+#dropdownHoverButton {
+  margin-top: 1rem; /* Adjust the value as needed */
+}
+
+#dropdownHover {
+  overflow-y: scroll;
+  max-height: 200px; /* Adjust as needed */
+}

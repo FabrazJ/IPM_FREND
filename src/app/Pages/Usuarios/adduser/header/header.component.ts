@@ -8,14 +8,14 @@ import { ModalService } from 'src/app/Servicios/ModalDataService/ModalAddUser.se
   styleUrls: []
 })
 export class HeaderComponent implements OnInit{
-     
+
   ngOnInit(): void {
   }
 
   constructor(private modalAddUser: ModalService) {}
 
   //BOTON DE AGREGAR ADD USER, DONDE SALE EL MODAL DE LOS CAMPOS REQUERIDOS
-    
+
   isModalOpenAUs = false;
 //Abrir modal
 
@@ -27,5 +27,5 @@ export class HeaderComponent implements OnInit{
   CloseUserModal() {
     this.isModalOpenAUs = false;
   }
- 
+
 }

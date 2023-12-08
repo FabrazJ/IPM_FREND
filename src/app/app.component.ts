@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 
 
 @Component({
@@ -7,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'IPM_FREND';
 
   constructor(private router: Router,) {}
@@ -16,8 +18,10 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
-  
+  ngOnInit(): void {
+    initFlowbite();
+  }
 
-  
+
 
 }
